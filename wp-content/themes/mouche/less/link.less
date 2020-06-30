@@ -1,0 +1,38 @@
+@import './utils.less';
+
+a {
+  transition: all 200ms ease-in;
+  text-decoration: none;
+
+  &:not([class*="text-"]):not([class*="color-"]):not(.btn):not(.tab) {
+    color: @color-links;
+
+    &:hover, &:active {
+      color: @default-link-hover;
+    }
+  }
+
+  &.text-white {
+    color: @color-links-light;
+
+    &:hover, &:active {
+      color: @light-link-hover !important;
+    }
+  }
+
+  &.text-black {
+    color: black;
+
+    &:hover, &:active {
+      color: @color-primary !important;
+    }
+  }
+
+  &.color-dark {
+    &:hover, &:active {
+      color: @color-primary !important;
+    }
+  }
+
+  &:focus { outline:none; } //removes FF dotted outline
+}
