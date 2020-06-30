@@ -1,12 +1,12 @@
 # WordPress Shared workflow
 
-All WordPress websites consists of a Database and Files. In order to work in a shared workflow, all team members will need to keep both in sync. We do that by using a plugin, and Git.
+All WordPress websites consist of Database and Files. In order to work in a shared workflow, all team members will need to keep both in sync. We do that by using a plugin and Git, and deploy to a remote hosting accessible by everyone.
 
 ## Setting up
 
 Make sure to install Git on your computer. If you prefer, you can also install a visual Git client like Fork.
 
-You will also need an http server with php and MySQL running on your machine - I recommend using XAMP or MAMP depending on your operational system.
+You will also need an HTTP server with PHP and MySQL running on your machine - I recommend using XAMP or MAMP depending on your operational system.
 
 
 ### Getting the files for the first time
@@ -19,9 +19,9 @@ git clone https://github.com/digelim/joshbersin.git
 
 ### Getting the database
 
-Now that you have the files running on your computer, you'll need to set up WordPress for the first time. I recommend using a tool like phpMyAdmin to create a new empty database for this site.
+Now that you have the files copied to your computer, you'll need to set up WordPress for the first time. I recommend using a tool like phpMyAdmin to create a new empty database for this site.
 
-After you connect WordPress with the database, make sure to enable the synchronization plugin. We are going to use the WP Sync DB.
+After you connect WordPress with the database, make sure to enable the database synchronization plugin. We are going to use the WP Sync DB, which is free.
 
 To fetch the database from the remote server for the first time, go to Tools > Migrate DB, select ```Pull``` and use the settings below:
 
