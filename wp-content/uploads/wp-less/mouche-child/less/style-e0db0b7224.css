@@ -1,0 +1,11 @@
+.page-template-page-home #search {
+  width: 100%;
+  background: transparent;
+}
+.page-template-page-home #search-category-wrapper {
+  top: 0;
+  right: 65px;
+}
+.page-template-page-home .input-icon-right i {
+  color: #BCBFC2;
+}

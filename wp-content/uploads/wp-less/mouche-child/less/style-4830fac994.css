@@ -1,0 +1,12 @@
+.page-template-page-home #search {
+  width: 100%;
+  background: transparent;
+}
+.page-template-page-home .select2-container--open,
+.page-template-page-home .select2-dropdown {
+  width: 100% !important;
+}
+.page-template-page-home .search-category-wrapper {
+  top: 0;
+  right: 65px;
+}

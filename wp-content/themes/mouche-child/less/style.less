@@ -1,4 +1,114 @@
+.page-template-page-home {
+	#search {
+	    width: 100%;
+	    background: transparent;
+			border-radius: 0;
+			border: 1px solid #979797;
+	}
 
+	#search-category-wrapper {
+		top: 0;
+		right: 65px;
+	}
+
+	.select2-selection--single {
+		border-left: none !important;
+		border-top: 1px solid #979797 !important;
+		border-bottom: 1px solid #979797 !important;
+	}
+
+	.input-icon-right {
+		i {
+			color: #BCBFC2;
+		}
+
+		button {
+	    top: 1px;
+	    right: 3px;
+	    width: 65px;
+	    height: 37px;
+	    background: transparent;
+			z-index: 1;
+
+			&:hover + i {
+				color: @color-primary;
+			}
+		}
+	}
+}
+
+a.subtitle:hover {
+	p {
+		color: @color-primary;
+	}
+}
+
+.trending-list {
+	li {
+		&:not(:last-child) {
+			padding-bottom: 15px;
+			border-bottom: 1px solid @border-color;
+		}
+
+		&:not(:first-child) {
+			padding-top: 15px;
+		}
+	}
+}
+
+.featured-articles-item {
+	&:not(:last-child) {
+		border-right: 1px solid @border-color;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+  &:not([class*=type-]) {
+    font-weight: 800;
+  }
+}
+
+.latest-articles-item {
+	&:not(:last-child) {
+		margin-bottom: 50px;
+	}
+}
+
+.widget {
+	box-shadow: @shadow;
+}
+
+.pagination {
+	.nav-links {
+	    align-items: center;
+	    display: flex;
+	    justify-content: center;
+
+			.page-numbers {
+				font-size: 14px;
+				
+				&:not(.prev):not(.next) {
+					margin-left: 27px;
+					margin-right: 27px;
+					font-weight: bold;
+				}
+
+				&.prev {
+					margin-right: 98px;
+				}
+
+				&.next {
+					margin-left: 98px;
+				}
+
+				&:not(.current) {
+					&:hover {
+						color: @color-primary !important;
+					}
+				}
+			}
+	}
+}
 // Add your styles above this line
 
 @import './responsive.less';

@@ -17,8 +17,8 @@ html {
 
 .container {
   width: 100%;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 15px;
+  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -31,7 +31,7 @@ html {
 
 @media (min-width: 768px) {
   .container {
-    max-width: 720px;
+    max-width: 710px;
   }
 }
 
@@ -43,7 +43,7 @@ html {
 
 @media (min-width: 1260px) {
   .container {
-    max-width: 1200px;
+    max-width: 1170px;
   }
 }
 
@@ -1217,7 +1217,7 @@ html {
 
 .generate-gutters(200);
 
-.generate-gutters(@n, @i: 10) when (@i =< @n) {
+.generate-gutters(@n, @i: 5) when (@i =< @n) {
   @margin: (@i/2);
   .gutter-@{i} {
     margin-right: ~"max(-@{margin}px, -2%)";
@@ -1229,7 +1229,7 @@ html {
     }
   }
 
-  .generate-gutters(@n, (@i + 10));
+  .generate-gutters(@n, (@i + 5));
 }
 
 .margin-responsive {

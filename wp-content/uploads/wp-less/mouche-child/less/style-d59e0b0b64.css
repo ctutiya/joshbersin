@@ -1,0 +1,7 @@
+.page-template-page-home #search {
+  width: 100%;
+  background: transparent;
+}
+.page-template-page-home .select2-dropdown {
+  width: 100% !important;
+}

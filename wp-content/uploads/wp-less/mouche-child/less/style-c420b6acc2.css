@@ -1,0 +1,46 @@
+.page-template-page-home #search {
+  width: 100%;
+  background: transparent;
+  border-radius: 0;
+  border: 1px solid #979797;
+}
+.page-template-page-home #search-category-wrapper {
+  top: 0;
+  right: 65px;
+}
+.page-template-page-home .select2-selection--single {
+  border-left: none !important;
+  border-top: 1px solid #979797 !important;
+  border-bottom: 1px solid #979797 !important;
+}
+.page-template-page-home .input-icon-right i {
+  color: #BCBFC2;
+}
+.page-template-page-home .input-icon-right button {
+  top: 1px;
+  right: 3px;
+  width: 65px;
+  height: 37px;
+  background: transparent;
+  z-index: 1;
+}
+.page-template-page-home .input-icon-right button:hover + i {
+  color: #20aadb;
+}
+h2 {
+  line-height: 1.218;
+}
+h2[class^="small"],
+h2[class*=" small"] {
+  font-size: 22px;
+}
+h2[class^="medium"],
+h2[class*=" medium"] {
+  font-size: 40px;
+  line-height: 50px;
+}
+h2[class^="large"],
+h2[class*=" large"] {
+  font-size: 40px;
+  line-height: 50px;
+}

@@ -57,22 +57,57 @@ h1 {
   &[class^="medium"],
   &[class*=" medium"] {
     font-size: ~"@{heading-size-medium}px";
+    line-height: 50px;
   }
 
   &[class^="large"],
   &[class*=" large"] {
     font-size: ~"@{heading-size-large}px";
+    line-height: 70px;
   }
 }
 
 h2 {
-  font-size: 28px;
-  line-height: 1.54;
+  line-height: 1.218;
+
+  &[class^="small"],
+  &[class*=" small"] {
+    font-size: ~"@{heading-size-small}px";
+  }
+
+  &[class^="medium"],
+  &[class*=" medium"] {
+    font-size: ~"@{heading-size-medium}px";
+    line-height: 50px;
+  }
+
+  &[class^="large"],
+  &[class*=" large"] {
+    font-size: 40px;
+    line-height: 50px;
+  }
 }
 
 h3 {
-  font-size: 24px;
   line-height: 1.218;
+
+  &[class^="small"],
+  &[class*=" small"] {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  &[class^="medium"],
+  &[class*=" medium"] {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  &[class^="large"],
+  &[class*=" large"] {
+    font-size: 40px;
+    line-height: 50px;
+  }
 }
 
 h4 {
@@ -185,6 +220,10 @@ a {
   color: @color-tertiary !important;
 }
 
+.border-color {
+  color: @border-color;
+}
+
 .color-dark {
   color: @color-dark;
 }
@@ -221,5 +260,5 @@ a {
 .generate-font-size(50);
 
 .letter-spacing {
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }

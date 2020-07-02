@@ -366,8 +366,8 @@ html {
 }
 .container {
   width: 100%;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 15px;
+  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -378,7 +378,7 @@ html {
 }
 @media (min-width: 768px) {
   .container {
-    max-width: 720px;
+    max-width: 710px;
   }
 }
 @media (min-width: 992px) {
@@ -388,7 +388,7 @@ html {
 }
 @media (min-width: 1260px) {
   .container {
-    max-width: 1200px;
+    max-width: 1170px;
   }
 }
 .container-fluid {
@@ -2871,14 +2871,12 @@ h1[class*=" small"] {
 h1[class^="medium"],
 h1[class*=" medium"] {
   font-size: 40px;
+  line-height: 50px;
 }
 h1[class^="large"],
 h1[class*=" large"] {
   font-size: 55px;
-}
-h2 {
-  font-size: 28px;
-  line-height: 1.54;
+  line-height: 70px;
 }
 h3 {
   font-size: 24px;
@@ -3140,7 +3138,7 @@ a.text-black,
   font-size: 50px;
 }
 .letter-spacing {
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 .bg-img {
   background-position: center;
@@ -5766,7 +5764,6 @@ button[type="submit"] {
   font-weight: 700 !important;
   text-transform: uppercase;
   line-height: 1;
-  border-radius: 4px;
   position: relative;
   text-align: center;
   text-decoration: none !important;
@@ -6298,7 +6295,7 @@ input[type="password"]:focus,
   right: 23px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 7px;
+  font-size: 20px;
 }
 label {
   font-size: 14px;
@@ -17239,7 +17236,6 @@ body.compensate-for-scrollbar {
 }
 .select2-container--default .select2-selection--single {
   background-color: #fff;
-  border: 1px solid #d9dadb;
   border-radius: 4px;
 }
 .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -17255,23 +17251,16 @@ body.compensate-for-scrollbar {
   color: #4b5157 !important;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow {
-  height: 26px;
+  height: calc(39px/2);
   position: absolute;
-  top: 1px;
-  right: 1px;
+  top: 0;
+  right: 5px;
   width: 20px;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
-  border-color: #888 transparent transparent transparent;
-  border-style: solid;
-  border-width: 5px 4px 0 4px;
-  height: 0;
-  left: 50%;
-  margin-left: -4px;
   margin-top: 5px;
   position: absolute;
   top: 50%;
-  width: 0;
 }
 .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__clear {
   float: left;
@@ -17288,7 +17277,7 @@ body.compensate-for-scrollbar {
   display: none;
 }
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
-  border-color: transparent transparent #888 transparent;
+  border-color: transparent transparent #4b5157 transparent;
   border-width: 0 4px 5px 4px;
 }
 .select2-container--default .select2-selection--multiple {
@@ -17631,37 +17620,38 @@ body.compensate-for-scrollbar {
   border-color: #5897fb;
 }
 span.select2.select2-container.select2-container--default {
-  width: 100% !important;
-  margin-bottom: 12px;
+  width: max-content !important;
   outline: 0 !important;
 }
 span.select2-selection.select2-selection--single {
   border-radius: 0px;
   border: 1px solid #d9dadb;
-  height: 50px;
+  height: 39px;
 }
 .select2-container--default .select2-search--dropdown .select2-search__field {
   outline: 0;
 }
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
   background: #20aadb;
+  font-size: 14px;
 }
 .select2-container--default .select2-selection--single .select2-selection__rendered {
-  font-size: 16px;
+  font-size: 14px;
   padding-left: 15px;
-  line-height: 47px;
+  padding-right: 40px;
+  line-height: 39px;
   opacity: 1;
   text-transform: capitalize;
   font-weight: 400;
 }
 .select2 b {
-  border-style: solid !important;
-  border-width: 2px 2px 0 0 !important;
-  border-color: #a0a0a0 !important;
-  height: 9px !important;
-  width: 10px !important;
-  left: -18% !important;
-  margin-left: 0 !important;
+  border-style: solid;
+  border-width: 1px 1px 0 0 !important;
+  border-color: #4b5157 !important;
+  height: 7px;
+  width: 7px;
+  left: -18%;
+  margin-left: 0;
   transform: rotate(135deg);
 }
 .select2.select2-container--open b {

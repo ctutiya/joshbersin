@@ -4015,6 +4015,14 @@ if ( class_exists( 'WPLessPlugin' ) ){
 		$responsive_heading_size_mobile_large = 36;
 	}
 
+	$footer_theme = get_field('footer_theme', 'options');
+
+	if ( $footer_theme == 'dark' ) {
+		$footer_text_color = $color_light;
+	} else {
+		$footer_text_color = $color_dark;
+	}
+
 	// General
   $less->addVariable( 'color-primary', $color_primary );
   $less->addVariable( 'color-secondary', $color_secondary );
@@ -4108,6 +4116,9 @@ if ( class_exists( 'WPLessPlugin' ) ){
 	$less->addVariable( 'responsive-heading-size-mobile-small', $responsive_heading_size_mobile_small );
 	$less->addVariable( 'responsive-heading-size-mobile-medium', $responsive_heading_size_mobile_medium );
 	$less->addVariable( 'responsive-heading-size-mobile-large', $responsive_heading_size_mobile_large );
+
+	// Footer
+	$less->addVariable( 'footer-text-color', $footer_text_color );
 }
 
 
@@ -4305,6 +4316,7 @@ function font_selector_styles() {
 add_action( 'wp_enqueue_scripts', 'font_selector_styles' );
 
 add_theme_support( 'post-thumbnails' );
+add_theme_support( 'menus' );
 
 if ( !function_exists( 'theme_setup' ) ) {
   function theme_setup() {
@@ -4313,3 +4325,30 @@ if ( !function_exists( 'theme_setup' ) ) {
 
   add_action( 'after_setup_theme', 'theme_setup' );
 }
+
+// Register menus
+function register_menu() {
+  register_nav_menu('menu-1',__( 'Primary' ));
+}
+add_action( 'admin_init', 'register_menu' );
+
+// Create menus
+function create_menus() {
+	$menu_name = 'menu-1';
+	$menu_location = 'Primary';
+
+	$menu_exists = wp_get_nav_menu_object( $menu_name );
+
+	if( !$menu_exists ){
+	  $menu_id = wp_create_nav_menu( $menu_name );
+
+	  if( !has_nav_menu( $menu_location ) ){
+	      $locations = get_theme_mod('nav_menu_locations');
+	      $locations[$menu_location] = $menu_id;
+
+				set_theme_mod( 'nav_menu_locations', $locations );
+	  }
+	}
+}
+
+add_action( 'admin_init', 'create_menus' );
