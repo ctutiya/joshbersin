@@ -6,7 +6,7 @@ get_header( $navigation );
 ?>
 
 <section>
-  <div class="container width-980 block-bottom-padding-normal">
+  <div class="container width-980 block-bottom-padding-large">
 
     <?php
 
@@ -22,7 +22,7 @@ get_header( $navigation );
     if ( $the_query->have_posts() ) {
       ?>
 
-      <section class="block-top-padding-normal block-bottom-padding-normal">
+      <section class="block-top-padding-large block-bottom-padding-large">
         <div class="container align-center width-980">
           <div class="font-36 m-t-40 p-b-20">
             <?php printf( esc_attr__( 'Results found for: "%s"', 'mouche' ), '<b>' . get_search_query() . '</b>' ); ?>

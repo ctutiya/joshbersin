@@ -19,7 +19,7 @@ get_header( $navigation );
   </div>
 </section>
 
-<section class="m-t-50">
+<section class="block-top-padding-large">
   <div class="container">
     <div class="row gutter-30 margin-responsive">
       <div class="flex-73">
@@ -31,7 +31,7 @@ get_header( $navigation );
           <?php get_template_part( 'template-parts/content', 'article' ); ?>
           <?php get_template_part( 'template-parts/content', 'article' ); ?>
         </div>
-        <div class="pagination block-top-padding-normal block-bottom-padding-normal">
+        <div class="pagination block-top-padding-large block-bottom-padding-large">
           <div class="nav-links">
             <a class="prev page-numbers" href="#">
               <div class="row align-items-center">

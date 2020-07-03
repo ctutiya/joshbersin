@@ -5537,13 +5537,13 @@ a.text-black,
     padding-bottom: 80px;
   }
   .block-bottom-padding-normal {
-    padding-bottom: 80px;
+    padding-bottom: 60px;
   }
   .block-top-padding-large {
     padding-top: 80px;
   }
   .block-top-padding-normal {
-    padding-top: 80px;
+    padding-top: 60px;
   }
 }
 .list-style-none li {
@@ -6233,7 +6233,7 @@ button[type="submit"][class*="small"],
 [class*=" btn"][class^="small"],
 input[type="submit"][class^="small"],
 button[type="submit"][class^="small"] {
-  padding: 10px 19px !important;
+  padding: 12px 14px !important;
   font-size: 14px;
 }
 [class^="btn"][class*="medium"],
@@ -31516,12 +31516,12 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
     padding-bottom: 60px;
   }
   .block-bottom-padding-normal {
-    padding-bottom: 60px;
+    padding-bottom: 30px;
   }
   .block-top-padding-large {
     padding-top: 60px;
   }
   .block-top-padding-normal {
-    padding-top: 60px;
+    padding-top: 30px;
   }
 }

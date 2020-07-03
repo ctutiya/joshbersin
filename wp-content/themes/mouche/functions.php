@@ -4329,25 +4329,28 @@ if ( !function_exists( 'theme_setup' ) ) {
 // Register menus
 function register_menu() {
   register_nav_menu('menu-1',__( 'Primary' ));
+	register_nav_menu('footer',__( 'Footer' ));
 }
 add_action( 'admin_init', 'register_menu' );
 
 // Create menus
 function create_menus() {
-	$menu_name = 'menu-1';
-	$menu_location = 'Primary';
+	$menu_name = ['menu-1', 'footer'];
+	$menu_location = ['Primary', 'Footer'];
 
-	$menu_exists = wp_get_nav_menu_object( $menu_name );
+	for ($i=0; $i < sizeof( $menu_name ); $i++) {
+		$menu_exists = wp_get_nav_menu_object( $menu_name[$i] );
 
-	if( !$menu_exists ){
-	  $menu_id = wp_create_nav_menu( $menu_name );
+		if( !$menu_exists ){
+		  $menu_id = wp_create_nav_menu( $menu_name[$i] );
 
-	  if( !has_nav_menu( $menu_location ) ){
-	      $locations = get_theme_mod('nav_menu_locations');
-	      $locations[$menu_location] = $menu_id;
+		  if( !has_nav_menu( $menu_location[$i] ) ){
+		      $locations = get_theme_mod('nav_menu_locations');
+		      $locations[$menu_location[$i]] = $menu_id;
 
-				set_theme_mod( 'nav_menu_locations', $locations );
-	  }
+					set_theme_mod( 'nav_menu_locations', $locations );
+		  }
+		}
 	}
 }
 

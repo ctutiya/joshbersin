@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Clock</title>
+    <g id="DESKTOP-Mock-ups" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.75">
+        <g id="Individual-Post-Page---2nd-draft" transform="translate(-671.000000, -360.000000)" fill="#20AADB">
+            <g id="BANNER" transform="translate(0.000000, 80.000000)">
+                <g id="Icon/Clock" transform="translate(671.000000, 280.000000)">
+                    <path d="M7.5,14.25 C3.77207794,14.25 0.75,11.2279221 0.75,7.5 C0.75,3.77207794 3.77207794,0.75 7.5,0.75 C11.2279221,0.75 14.25,3.77207794 14.25,7.5 C14.25,11.2279221 11.2279221,14.25 7.5,14.25 Z M8.25,7.5 L8.25,4.5 C8.25,4.08578644 7.91421356,3.75 7.5,3.75 C7.08578644,3.75 6.75,4.08578644 6.75,4.5 L6.75,8.25 C6.75,8.66421356 7.08578644,9 7.5,9 L9.75,9 C10.1642136,9 10.5,8.66421356 10.5,8.25 C10.5,7.83578644 10.1642136,7.5 9.75,7.5 L8.25,7.5 Z" id="Clock"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

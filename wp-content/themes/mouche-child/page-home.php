@@ -9,7 +9,7 @@ $footer = get_field('footer', 'options') ?: null;
 get_header( $navigation );
 ?>
 
-<section class="block-top-padding-normal block-bottom-padding-normal">
+<section class="block-top-padding-large block-bottom-padding-large">
   <div class="container align-center width-850">
     <h1 class="large m-b-35">Insights on Work, Talent and HR technology</h1>
     <form action="<?php echo home_url(); ?>" method="get" class="relative width-550 margin-auto">
@@ -349,7 +349,7 @@ get_header( $navigation );
             </div>
           </div>
         </div>
-        <div class="pagination block-top-padding-normal block-bottom-padding-normal">
+        <div class="pagination block-top-padding-large block-bottom-padding-large">
           <div class="nav-links">
             <a class="prev page-numbers" href="#">
               <div class="row align-items-center">
