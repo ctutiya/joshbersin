@@ -1,0 +1,195 @@
+.page-template-page-home #search {
+  width: 100%;
+  background: transparent;
+  border-radius: 0;
+  border: 1px solid #979797;
+}
+.page-template-page-home #search-category-wrapper {
+  top: 0;
+  right: 65px;
+}
+.page-template-page-home .select2-selection--single {
+  border-left: none !important;
+  border-top: 1px solid #979797 !important;
+  border-bottom: 1px solid #979797 !important;
+}
+.page-template-page-home .input-icon-right i {
+  color: #BCBFC2;
+}
+.page-template-page-home .input-icon-right button {
+  top: 1px;
+  right: 3px;
+  width: 65px;
+  height: 37px;
+  background: transparent;
+  z-index: 1;
+}
+.page-template-page-home .input-icon-right button:hover + i {
+  color: #1d99c6;
+}
+a.subtitle:hover p {
+  color: #1d99c6;
+}
+.trending-list li:not(:last-child) {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #d9dadb;
+}
+.trending-list li:not(:first-child) {
+  padding-top: 15px;
+}
+.featured-articles-item:not(:last-child) {
+  border-right: 1px solid #d9dadb;
+}
+h1:not([class*=type-]),
+h2:not([class*=type-]),
+h3:not([class*=type-]),
+h4:not([class*=type-]),
+h5:not([class*=type-]),
+h6:not([class*=type-]) {
+  font-weight: 800;
+}
+.latest-articles-item:not(:last-child) {
+  margin-bottom: 50px;
+}
+.widget {
+  box-shadow: 0px 2px 30px 0px rgba(48, 70, 89, 0.15);
+}
+.pagination .nav-links {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.pagination .nav-links .page-numbers {
+  font-size: 14px;
+}
+.pagination .nav-links .page-numbers:not(.prev):not(.next) {
+  margin-left: 27px;
+  margin-right: 27px;
+  font-weight: bold;
+}
+.pagination .nav-links .page-numbers.prev {
+  margin-right: 98px;
+}
+.pagination .nav-links .page-numbers.next {
+  margin-left: 98px;
+}
+.pagination .nav-links .page-numbers:not(.current):hover {
+  color: #1d99c6 !important;
+}
+footer ul {
+  list-style: none;
+}
+footer ul .menu-item {
+  display: inherit;
+}
+footer ul .menu-item a {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+footer ul .menu-item a:hover {
+  color: #20aadb !important;
+}
+footer .gutter-30 {
+  margin-right: max(-15px, -2%);
+  margin-left: max(-15px, -2%);
+}
+footer .gutter-30 > .menu-item {
+  margin-right: min(15px, 2%);
+  margin-left: min(15px, 2%);
+}
+#footer-copyright {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid white;
+}
+#footer-copyright #scroll-top:hover span {
+  color: #20aadb !important;
+}
+#footer-copyright #scroll-top:hover path {
+  fill: #20aadb;
+}
+#share-buttons {
+  padding-right: 30px;
+}
+#share-buttons #share-icons a:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+#share-buttons #share-icons a:hover path {
+  fill: #1d99c6;
+}
+#share-buttons #share-icons #like-button.active path,
+#share-buttons #share-icons #like-button:hover path {
+  fill: #1d99c6;
+}
+#post-article {
+  color: #222222;
+}
+#post-article:first-letter {
+  color: #20aadb;
+  font-family: Nunito Sans;
+  font-size: 100px;
+  font-weight: 800;
+  line-height: 75px;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 5px;
+}
+#post-article p {
+  margin-bottom: 35px;
+}
+#about-content {
+  color: #222222;
+}
+#about-content:first-letter {
+  color: #20aadb;
+  font-family: Nunito Sans;
+  font-size: 100px;
+  font-weight: 800;
+  line-height: 75px;
+  float: left;
+  margin-right: 15px;
+}
+#about-content p {
+  margin-bottom: 35px;
+  line-height: 27px;
+}
+#about-content p:first-of-type {
+  padding-top: 10px;
+}
+#news-items .news-item:not(:last-child) {
+  border-bottom: 1px solid #d9dadb;
+}
+@media (min-width: 769px) {
+  .news-item:last-child {
+    margin-bottom: -60px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .news-item:last-child {
+    margin-bottom: -60px;
+  }
+}
+@media (max-width: 480px) {
+  .news-item:last-child {
+    margin-bottom: -30px;
+  }
+}
+.event-item {
+  box-shadow: 0 2px 10px 0 rgba(225, 225, 225, 0.5);
+}
+#webinars > .row:not(:last-child) {
+  margin-bottom: 35px;
+}
+#events-testimonials-row [class*="col"] {
+  flex-shrink: 1;
+  overflow: hidden;
+}
+#events-testimonials-row .owl-theme .owl-dots {
+  text-align: left;
+  margin-top: 0 !important;
+}
+#events-testimonials-row .owl-theme .owl-dots .owl-dot {
+  margin-right: 0 !important;
+}

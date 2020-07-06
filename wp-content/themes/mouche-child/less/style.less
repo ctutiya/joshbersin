@@ -258,6 +258,84 @@ footer {
 		}
 	}
 }
+
+.event-item {
+	box-shadow: 0 2px 10px 0 rgba(225, 225, 225, 0.5);
+}
+
+#webinars {
+	> .row {
+		&:not(:last-child) {
+			margin-bottom: 35px;
+		}
+	}
+}
+
+#conferences {
+	> .row {
+		&:not(:last-child) {
+			margin-bottom: 35px;
+		}
+	}
+}
+
+#events-testimonials-row {
+	[class*="col"] {
+		flex-shrink:1;
+		overflow: hidden;
+	}
+
+	.owl-theme .owl-dots {
+    text-align: left;
+    margin-top: 0 !important;
+
+		.owl-dot {
+			margin-right: 0 !important;
+
+			&:not(.active):not(:hover) {
+				span {
+					background: @color-tertiary !important;
+				}
+			}
+		}
+	}
+}
+
+#featured-resources-row {
+	.col:not(:first-child):after {
+	    content: '';
+	    width: 1px;
+	    height: 100%;
+	    background: @border-color;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	}
+
+	.featured-resources-item {
+		box-shadow: 0 2px 10px 0 rgba(225, 225, 225, 0.5);
+	}
+}
+
+.resources-button {
+	position: absolute;
+	bottom: 15px;
+}
+
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+	border-radius: 4px;
+	background: white;
+}
+
+input[type="checkbox"]:checked + label:before {
+	background: @color-primary;
+}
+
+.woocommerce-account .entry-header {
+    display: none;
+}
+
 // Add your styles above this line
 
 @import './responsive.less';

@@ -367,7 +367,6 @@ get_header( $navigation );
             </a>
           </div>
         </div>
-
       </div>
       <div class="col">
         <div class="m-t-40">

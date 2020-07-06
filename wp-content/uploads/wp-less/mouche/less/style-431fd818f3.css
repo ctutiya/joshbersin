@@ -6030,7 +6030,7 @@ button[type="submit"][class*="medium"],
 [class*=" btn"][class^="medium"],
 input[type="submit"][class^="medium"],
 button[type="submit"][class^="medium"] {
-  padding: 10px 25px !important;
+  padding: 12px 25px !important;
   font-size: 14px;
 }
 [class^="btn"][class*="large"],
@@ -6041,7 +6041,7 @@ button[type="submit"][class*="large"],
 [class*=" btn"][class^="large"],
 input[type="submit"][class^="large"],
 button[type="submit"][class^="large"] {
-  padding: 10px 30px !important;
+  padding: 12px 30px !important;
   font-size: 14px;
 }
 [class^="btn"][disabled],
@@ -6296,7 +6296,6 @@ label {
   font-size: 14px;
 }
 label > input,
-label > div,
 label > textarea {
   margin-top: 10px;
 }

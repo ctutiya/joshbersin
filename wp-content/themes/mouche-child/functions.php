@@ -17,6 +17,12 @@ function child_scripts() {
 
       wp_enqueue_script( 'single-post', get_stylesheet_directory_uri() . '/js/single-post.js', array(), $single_post );
     }
+
+    if ( is_page('events') ) {
+      $events  = date("ymd-Gis", filemtime( get_stylesheet_directory_uri() . '/js/events.js' ));
+
+      wp_enqueue_script( 'events', get_stylesheet_directory_uri() . '/js/events.js', array(), $events );
+    }
   }
 }
 

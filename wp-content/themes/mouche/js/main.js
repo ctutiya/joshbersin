@@ -1,13 +1,4 @@
 jQuery(document).ready(function($) {
-  // Carousels
-  $('.owl-carousel').owlCarousel({
-    items: 1,
-    dots: true,
-    loop: true,
-    autoplay: true,
-    autoplaySpeed: 2000,
-  });
-
   // mobile menu
   $('.open-mobile-menu').on('click', function(e) {
     e.preventDefault();
