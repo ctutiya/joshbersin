@@ -44,44 +44,41 @@ get_header( $navigation );
 		<?php
 		if ( isset( $_GET['register'] ) ): ?>
 			<!-- Register -->
-			<?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
-				<form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
-					<?php do_action( 'woocommerce_register_form_start' ); ?>
-					<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
-						<label>
-							<input placeholder=" " type="text" class="m-t-10 full-width" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
-							<span>Username</span>
-						</label>
-						<label class="pure-material-textfield-outlined m-t-20">
-							<input placeholder=" " type="email" class="m-t-10 full-width" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
-				      <span>Email</span>
-				    </label>
-					<?php endif; ?>
+			<div class="width-550 margin-auto">
 
-					<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
-						<label class="pure-material-textfield-outlined m-t-20">
-				      <input id="reg_password" type="password" name="password" value="" placeholder=" ">
-				      <span>Password</span>
-				    </label>
-					<?php else : ?>
+				<?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
+					<form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
+						<?php do_action( 'woocommerce_register_form_start' ); ?>
+						<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
+							<label>
+								<input placeholder=" " type="text" class="m-t-10 full-width" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+								<span>Username</span>
+							</label>
+							<label class="pure-material-textfield-outlined m-t-20">
+								<input placeholder=" " type="email" class="m-t-10 full-width" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+					      <span>Email</span>
+					    </label>
+						<?php endif; ?>
 
-						<?php esc_html_e( 'A password will be sent to your email address.', 'woocommerce' ); ?>
+						<?php do_action( 'woocommerce_register_form' ); ?>
 
-					<?php endif; ?>
+						<p class="form-row half_width newr" id="afreg_additionalshowhide_129">
+							<input type="password" class="input-text" name="afreg_additional_129" id="afreg_additional_129" value="" placeholder="Confirm Password*">
+						</p>
+
 						<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-						<button type="submit" class="sign-in-btn btn btn-primary btn-large m-t-20 woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?></button>
-						<div class="login-signup-alternative m-t-20">
-					    <div class="label-s2 dark align-center">
-					      or continue with
-					    </div>
-					  </div>
-						<?php
-						echo do_shortcode('[woocommerce_social_login_buttons return_url="https://vesple.com/my-account"]');
-						?>
-					<?php do_action( 'woocommerce_register_form_end' ); ?>
 
-				</form>
-			<?php endif; ?>
+						<p class="color-dark font-14 m-b-30"><span class="color-red">*</span>required</p>
+						<button type="submit" class="sign-in-btn btn primary small woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?> <i class="m-l-5 icon-arrow_right_alt"></i></button>
+
+						<?php do_action( 'woocommerce_register_form_end' ); ?>
+
+					</form>
+					<div class="p-t-20 m-t-25 border-top inline-block full-width">Already have an account?<a class="color-tertiary m-l-10" href="<?php echo home_url('/my-account') ?>">Sign in</a></div>
+				</div>
+
+				<?php endif; ?>
+
 			<?php else: ?>
 			<!-- Sign in -->
 			<form class="woocommerce-form woocommerce-form-login login width-300 margin-auto" method="post">
@@ -106,11 +103,24 @@ get_header( $navigation );
 				<div class="m-t-15 font-16">Don’t have an account? <a class="type-bold" href="<?php echo home_url('/my-account') ?>?register">Register Here</a></div>
 		  </form>
 		<?php endif; ?>
-		<?php if (isset( $_GET['register'] )): ?>
-			<div class="label-s2 white align-center m-t-20 m-b-50">Already have an account? <a class="dark-bg" href="<?php echo home_url('/my-account') ?>">Sign in</a></div>
-		<?php endif; ?>
 	</div>
 </section>
+
+<?php if ( isset( $_GET['redirect-url'] ) ): ?>
+	<div class="registration-overlay row no-gutters justify-content-center align-items-center">
+		<div class="registration-popup relative bg-white m-t-50 m-b-50 width-350 p-l-35 p-r-35 p-t-50 p-b-50 align-center color-tertiary">
+			<img class="m-b-20" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/josh-bersin-logo-square.png" alt="Register to continue">
+			<h2 class="small m-b-5">Thanks for your interest.</h2>
+			<p class="m-b-20 font-14">Register now to have access to valuable research-based resources and our complimentary newsletter.</p>
+			<a href="#" class="btn small primary close-registration-popup">Register <i class="m-l-5 icon-arrow_right_alt"></i></a>
+			<a href="#" class="close-registration-popup registration-popup-icon-close">
+				<svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+					<path d="m10 8.59823895 6.3079247-6.30792473c.3870857-.38708563 1.0146755-.38708563 1.4017611 0 .3870856.38708562.3870856 1.01467542 0 1.40176105l-6.3079247 6.30792473 6.3079247 6.3079247c.3870856.3870857.3870856 1.0146755 0 1.4017611s-1.0146754.3870856-1.4017611 0l-6.3079247-6.3079247-6.30792473 6.3079247c-.38708563.3870856-1.01467543.3870856-1.40176105 0-.38708563-.3870856-.38708563-1.0146754 0-1.4017611l6.30792473-6.3079247-6.30792473-6.30792473c-.38708563-.38708563-.38708563-1.01467543 0-1.40176105.38708562-.38708563 1.01467542-.38708563 1.40176105 0z" fill="#bcbfc2" fill-rule="evenodd" transform="translate(-2 -2)"/>
+				</svg>
+			</a>
+		</div>
+	</div>
+<?php endif; ?>
 
 <?php
 

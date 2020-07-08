@@ -4,6 +4,13 @@ $navigation = get_field('navigation', 'options') ?: null;
 $footer = get_field('footer', 'options') ?: null;
 
 get_header( $navigation );
+
+$user_ip = get_the_user_ip();
+$posts_read_key = 'posts_read_' . $user_ip;
+$posts_read = get_option( $posts_read_key ) ?: 0;
+
+update_option( $posts_read_key, $posts_read + 1 );
+
 ?>
 
 <section class="header-top-padding-normal header-bottom-padding-normal bg-secondary">

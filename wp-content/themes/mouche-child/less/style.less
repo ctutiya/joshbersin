@@ -336,6 +336,166 @@ input[type="checkbox"]:checked + label:before {
     display: none;
 }
 
+nav.woocommerce-MyAccount-navigation {
+    width: 100%;
+}
+
+body.woocommerce-account ul li.woocommerce-MyAccount-navigation-link--dashboard:after {
+    content: "\f26c";
+}
+
+body.woocommerce-account ul li.woocommerce-MyAccount-navigation-link--downloads:after {
+    content: "\f019";
+}
+
+body.woocommerce-account ul li.woocommerce-MyAccount-navigation-link--edit-account:after {
+    content: "\f007";
+}
+
+body.woocommerce-account ul li.woocommerce-MyAccount-navigation-link--customer-logout:after {
+    content: "\f08b";
+}
+
+li.woocommerce-MyAccount-navigation-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+		text-transform: uppercase;
+		font-size: 14px;
+		font-weight: bold;
+
+		a {
+			margin-right: 100px;
+			padding-top: 15px !important;
+			padding-bottom: 15px !important;
+
+		}
+
+		&:not(.is-active) {
+			a {
+				color: @color-tertiary !important;
+			}
+		}
+
+		&.is-active, &:hover {
+			a {
+				color: @color-primary !important;
+			}
+		}
+
+
+		&:after {
+			font-family: 'icomoon';
+			color: rgba(0,0,0,0.5);
+			font-size: 17px;
+		}
+}
+
+.hentry .entry-content .woocommerce-MyAccount-navigation ul {
+	border-top: 1px solid @border-color;
+
+	li {
+		border-bottom: 1px solid @border-color;
+	}
+}
+
+.woocommerce-info, .woocommerce-noreviews, p.no-comments {
+	background: @color-secondary !important;
+}
+
+.registration-overlay {
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+
+.btn.small {
+    min-width: 138px;
+    justify-content: center;
+}
+
+.registration-popup-icon-close {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+
+	&:hover {
+		path {
+			fill: @color-tertiary;
+		}
+	}
+}
+
+.afreg_extra_fields {
+	label:not([for="afreg_additional_126"]) {
+    display: none;
+	}
+
+	h3 {
+		display: none;
+	}
+}
+
+.woocommerce-form {
+	.half_width {
+    width: ~"calc(50% - 10px)" !important;
+    margin-right: 10px !important;
+	}
+
+	span.select2.select2-container.select2-container--default {
+    width: 100% !important;
+	}
+
+	span.select2-selection.select2-selection--single {
+    border-radius: 4px;
+	}
+
+	.form-row {
+    margin-bottom: 15px !important;
+
+		&:not(.half_width) {
+    	padding-right: 10px !important;
+		}
+	}
+}
+
+#afreg_additionalshowhide_128, #afreg_additionalshowhide_129 {
+	position: relative;
+
+	input {
+		padding-left: 52px !important;
+	}
+
+	&:before {
+	    display: block;
+	    content: url('../images/icon/lock.svg');
+	    top: 7px;
+	    left: 15px;
+			position: absolute;
+	}
+
+	&:after {
+    position: absolute;
+    top: 10px;
+    height: 20px;
+    left: 41px;
+    width: 1px;
+    background: @border-color;
+    content: '';
+	}
+}
+
+.color-red {
+	color: #DD2211;
+}
+
+.woocommerce-form-register {
+    margin-right: -10px;
+}
 // Add your styles above this line
 
 @import './responsive.less';

@@ -9,4 +9,11 @@ $(document).ready(function(){
       scrollTop: 0
     }, 1000);
   });
+
+  // Registration popup
+  $('.close-registration-popup').on('click', function(event) {
+    event.preventDefault();
+
+    $('.registration-overlay').fadeOut();
+  });
 });
