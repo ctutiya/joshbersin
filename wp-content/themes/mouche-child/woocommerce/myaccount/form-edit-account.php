@@ -19,58 +19,126 @@ defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_edit_account_form' ); ?>
 
-<form class="woocommerce-EditAccountForm edit-account" action="" method="post" <?php do_action( 'woocommerce_edit_account_form_tag' ); ?> >
+<section class="block-bottom-padding-large">
+  <div class="container-fluid p-l-25 p-r-25">
+    <h2 class="medium p-b-25 border-bottom m-b-25">Profile</h2>
+    <div class="row justify-content-between width-800 gutter-15 align-items-center">
+      <div class="col-auto">
+        <div class="row gutter-15 align-items-center">
+          <img class="col-auto square-80 image-circle" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/profile-picture.png" alt="Profile picture">
+          <div class="col">
+            <div class="p-l-5">
+              <p class="caps color-primary m-b-10 type-bold font-12">NAME</p>
+              <p>John Smith</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-auto">
+        <p class="caps color-primary m-b-10 type-bold font-12">Company</p>
+        <p>HR New York, Inc.</p>
+      </div>
+      <div class="col-auto align-right">
+        <a href="#" class="btn small primary aling-items-center">change <i class="icon-arrow_right_alt m-l-5"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
 
-	<?php do_action( 'woocommerce_edit_account_form_start' ); ?>
 
-	<p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
-		<label for="account_first_name"><?php esc_html_e( 'First name', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_first_name" id="account_first_name" autocomplete="given-name" value="<?php echo esc_attr( $user->first_name ); ?>" />
-	</p>
-	<p class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
-		<label for="account_last_name"><?php esc_html_e( 'Last name', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_last_name" id="account_last_name" autocomplete="family-name" value="<?php echo esc_attr( $user->last_name ); ?>" />
-	</p>
-	<div class="clear"></div>
+<section class="block-bottom-padding-large">
+  <div class="container-fluid p-l-25 p-r-25">
+    <h2 class="medium p-b-25 border-bottom m-b-25">Account Information</h2>
+    <div class="row justify-content-between width-800 gutter-15 align-items-center m-b-20">
+      <div class="flex-26">
+        Job Title
+      </div>
+      <div class="flex-26">
+        President
+      </div>
+      <div class="col-auto align-right row align-items-center">
+        <p class="font-12 caps p-r-30 type-bold" style="visibility: hidden;">REMOVE</p>
+        <a href="#" class="btn small primary aling-items-center">change <i class="icon-arrow_right_alt m-l-5"></i></a>
+      </div>
+    </div>
+    <div class="row justify-content-between width-800 gutter-15 align-items-center m-b-20">
+      <div class="flex-26">
+        Email
+      </div>
+      <div class="flex-26">
+        john.smith@gmail.com
+      </div>
+      <div class="col-auto align-right row align-items-center">
+        <p class="font-12 caps p-r-30 type-bold" style="visibility: hidden;">REMOVE</p>
+        <a href="#" class="btn small primary aling-items-center">change <i class="icon-arrow_right_alt m-l-5"></i></a>
+      </div>
+    </div>
+    <div class="row justify-content-between width-800 gutter-15 align-items-center m-b-20">
+      <div class="flex-26">
+        No. of Employees
+      </div>
+      <div class="flex-26">
+        20
+      </div>
+      <div class="col-auto align-right row align-items-center">
+        <p class="font-12 caps p-r-30 type-bold">REMOVE</p>
+        <a href="#" class="btn small primary aling-items-center">change <i class="icon-arrow_right_alt m-l-5"></i></a>
+      </div>
+    </div>
+    <div class="row justify-content-between width-800 gutter-15 align-items-center m-b-20">
+      <div class="flex-26">
+        Company Headquarters
+      </div>
+      <div class="flex-26">
+        New York, New York
+      </div>
+      <div class="col-auto align-right row align-items-center">
+        <p class="font-12 caps p-r-30 type-bold">REMOVE</p>
+        <a href="#" class="btn small primary aling-items-center">change <i class="icon-arrow_right_alt m-l-5"></i></a>
+      </div>
+    </div>
+    <div class="row justify-content-between width-800 gutter-15 align-items-center m-b-20">
+      <div class="flex-26">
+        Job Type
+      </div>
+      <div class="flex-26">
+        Vendor consultant
+      </div>
+      <div class="col-auto align-right row align-items-center">
+        <p class="font-12 caps p-r-30 type-bold" style="visibility: hidden;">REMOVE</p>
+        <a href="#" class="btn small primary aling-items-center">change <i class="icon-arrow_right_alt m-l-5"></i></a>
+      </div>
+    </div>
+    <div class="row justify-content-between width-800 gutter-15 align-items-center">
+      <div class="flex-26">
+        Interests
+      </div>
+      <div class="flex-26">
+        Articles and Newsletter<br>Josh Bersin Academy
+      </div>
+      <div class="col-auto align-right row align-items-center">
+        <p class="font-12 caps p-r-30 type-bold">REMOVE</p>
+        <a href="#" class="btn small primary aling-items-center">change <i class="icon-arrow_right_alt m-l-5"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
 
-	<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-		<label for="account_display_name"><?php esc_html_e( 'Display name', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_display_name" id="account_display_name" value="<?php echo esc_attr( $user->display_name ); ?>" /> <span><em><?php esc_html_e( 'This will be how your name will be displayed in the account section and in reviews', 'woocommerce' ); ?></em></span>
-	</p>
-	<div class="clear"></div>
-
-	<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-		<label for="account_email"><?php esc_html_e( 'Email address', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-		<input type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email" id="account_email" autocomplete="email" value="<?php echo esc_attr( $user->user_email ); ?>" />
-	</p>
-
-	<fieldset>
-		<legend><?php esc_html_e( 'Password change', 'woocommerce' ); ?></legend>
-
-		<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-			<label for="password_current"><?php esc_html_e( 'Current password (leave blank to leave unchanged)', 'woocommerce' ); ?></label>
-			<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_current" id="password_current" autocomplete="off" />
-		</p>
-		<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-			<label for="password_1"><?php esc_html_e( 'New password (leave blank to leave unchanged)', 'woocommerce' ); ?></label>
-			<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_1" id="password_1" autocomplete="off" />
-		</p>
-		<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-			<label for="password_2"><?php esc_html_e( 'Confirm new password', 'woocommerce' ); ?></label>
-			<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_2" id="password_2" autocomplete="off" />
-		</p>
-	</fieldset>
-	<div class="clear"></div>
-
-	<?php do_action( 'woocommerce_edit_account_form' ); ?>
-
-	<p>
-		<?php wp_nonce_field( 'save_account_details', 'save-account-details-nonce' ); ?>
-		<button type="submit" class="woocommerce-Button button" name="save_account_details" value="<?php esc_attr_e( 'Save changes', 'woocommerce' ); ?>"><?php esc_html_e( 'Save changes', 'woocommerce' ); ?></button>
-		<input type="hidden" name="action" value="save_account_details" />
-	</p>
-
-	<?php do_action( 'woocommerce_edit_account_form_end' ); ?>
-</form>
-
+<section>
+  <div class="container-fluid p-l-25 p-r-25">
+    <h2 class="medium p-b-25 border-bottom m-b-25">Password</h2>
+    <p class="m-b-35">To change your password, you’ll need to verify the current one first. Then create a password you’re not using elsewhere, and be sure to change it regularly as well as anytime you suspect it’s been compromised.</p>
+    <div class="row justify-content-between gutter-15 align-items-center">
+      <div class="col-auto">
+        Current Password
+      </div>
+      <div class="flex-19">
+        <p class="type-bold">***********</p>
+      </div>
+      <div class="col-auto">
+        <a href="#" class="btn small primary aling-items-center">change <i class="icon-arrow_right_alt m-l-5"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
 <?php do_action( 'woocommerce_after_edit_account_form' ); ?>

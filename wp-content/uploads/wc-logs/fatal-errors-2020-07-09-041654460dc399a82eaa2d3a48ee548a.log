@@ -1,0 +1,27 @@
+2020-07-09T11:06:45+00:00 CRITICAL Uncaught Less_Exception_Chunk: ParseError: missing opening `{` in style.less on line 528, column 1
+526| }
+527| 
+528| }
+529| input[value="articles-newsletter"] {
+530|     top: 34px;
+531|     left: 2px; in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lib/Less/Parser.php:535
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lib/Less/Parser.php(474): Less_Parser->GetRules('/Applications/M...')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lib/Less/Parser.php(346): Less_Parser->_parse('/Applications/M...')
+#2 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lessc.inc.php(147): Less_Parser->parseFile('/Applications/M...')
+#3 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lessc.inc.php(225): lessc->compileFile('/Applications/M...')
+#4 /Applications/MAMP/htdocs/jos in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lib/Less/Parser.php on line 535
+
+2020-07-09T11:31:40+00:00 CRITICAL Uncaught Less_Exception_Chunk: ParseError: missing opening `{` in style.less on line 572, column 1
+570| 	border-style:solid;border-width:1px 1px 0 0!important;
+571| 	border-color:#4b5157!important;height:7px;width:7px;left:-18%;margin-left:0;transform:rotate(135deg);}
+572| }
+573| // Add your styles above this line
+574| 
+575| @import './responsive.less'; in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lib/Less/Parser.php:535
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lib/Less/Parser.php(474): Less_Parser->GetRules('/Applications/M...')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lib/Less/Parser.php(346): Less_Parser->_parse('/Applications/M...')
+#2 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lessc.inc.php(147): Less_Parser->parseFile('/Applications/M...')
+#3 /Applications/MAMP/htdocs/joshber in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lib/Less/Parser.php on line 535
+

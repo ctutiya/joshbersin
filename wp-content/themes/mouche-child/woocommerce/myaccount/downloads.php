@@ -22,25 +22,57 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$downloads     = WC()->customer->get_downloadable_products();
-$has_downloads = (bool) $downloads;
+// TODO: Change has downloads function
 
-do_action( 'woocommerce_before_account_downloads', $has_downloads ); ?>
+$has_downloads = true; ?>
 
 <?php if ( $has_downloads ) : ?>
 
-	<?php do_action( 'woocommerce_before_available_downloads' ); ?>
-
-	<?php do_action( 'woocommerce_available_downloads', $downloads ); ?>
-
-	<?php do_action( 'woocommerce_after_available_downloads' ); ?>
+<div class="container widt-850">
+  <div class="row justify-content-between align-items-center myaccount-downloads-row gutter-40">
+    <div class="col">
+      <h3 class="medium">Why HR Technology Matters Now More Than Ever</h3>
+    </div>
+    <div class="col-auto">
+      <a href="#" class="btn medium primary">DOWNLOAD <i class="icon-download m-l-10"></i></a>
+    </div>
+  </div>
+  <div class="row justify-content-between align-items-center myaccount-downloads-row gutter-40">
+    <div class="col">
+      <h3 class="medium">Guide to Talent Acquisition for the Future</h3>
+    </div>
+    <div class="col-auto">
+      <a href="#" class="btn medium primary">DOWNLOAD <i class="icon-download m-l-10"></i></a>
+    </div>
+  </div>
+  <div class="row justify-content-between align-items-center myaccount-downloads-row gutter-40">
+    <div class="col">
+      <h3 class="medium">HR Technology for 2020 Slideset</h3>
+    </div>
+    <div class="col-auto">
+      <a href="#" class="btn medium primary">DOWNLOAD <i class="icon-download m-l-10"></i></a>
+    </div>
+  </div>
+  <div class="row justify-content-between align-items-center myaccount-downloads-row gutter-40">
+    <div class="col">
+      <h3 class="medium">HRPS Research on The New Workforce</h3>
+    </div>
+    <div class="col-auto">
+      <a href="#" class="btn medium primary">DOWNLOAD <i class="icon-download m-l-10"></i></a>
+    </div>
+  </div>
+  <div class="row justify-content-between align-items-center myaccount-downloads-row gutter-40">
+    <div class="col">
+      <h3 class="medium">Thriving In The Pandemic: Lessons From The World Happiness Study</h3>
+    </div>
+    <div class="col-auto">
+      <a href="#" class="btn medium primary">DOWNLOAD <i class="icon-download m-l-10"></i></a>
+    </div>
+  </div>
+</div>
 
 <?php else : ?>
 	<div class="woocommerce-Message woocommerce-Message--info woocommerce-info">
-		<a class="woocommerce-Button button" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>">
-		</a>
 		<?php esc_html_e( 'No downloads available yet.', 'woocommerce' ); ?>
 	</div>
 <?php endif; ?>
-
-<?php do_action( 'woocommerce_after_account_downloads', $has_downloads ); ?>

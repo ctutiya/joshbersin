@@ -17,11 +17,40 @@
 
 defined( 'ABSPATH' ) || exit;
 
-wc_print_notice( esc_html__( 'Password reset email has been sent.', 'woocommerce' ) );
+$navigation = get_field('navigation', 'options') ?: null;
+
+get_header( $navigation );
+
 ?>
 
-<?php do_action( 'woocommerce_before_lost_password_confirmation_message' ); ?>
+<section class="header-top-padding-normal header-bottom-padding-normal bg-secondary">
+  <div class="container width-950 align-center p-t-50 p-b-50">
+    <h1 class="large m-b-25">My Account</h1>
+    <a href="#" onclick="history.back();">
+      <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/arrow-primary.svg" alt="Go back">
+    </a>
+  </div>
+</section>
 
-<p><?php echo esc_html( apply_filters( 'woocommerce_lost_password_confirmation_message', esc_html__( 'A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset.', 'woocommerce' ) ) ); ?></p>
+<section class="block-top-padding-large block-bottom-padding-large">
+	<div class="container">
 
-<?php do_action( 'woocommerce_after_lost_password_confirmation_message' ); ?>
+    <?php
+    wc_print_notice( esc_html__( 'Password reset email has been sent.', 'woocommerce' ) );
+    ?>
+
+    <?php do_action( 'woocommerce_before_lost_password_confirmation_message' ); ?>
+
+    <p><?php echo esc_html( apply_filters( 'woocommerce_lost_password_confirmation_message', esc_html__( 'A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset.', 'woocommerce' ) ) ); ?></p>
+
+    <?php do_action( 'woocommerce_after_lost_password_confirmation_message' ); ?>
+  </div>
+</section>
+
+<?php
+
+$footer = get_field('footer', 'options') ?: null;
+
+get_footer( $footer );
+
+?>

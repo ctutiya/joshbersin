@@ -45,7 +45,6 @@ get_header( $navigation );
 		if ( isset( $_GET['register'] ) ): ?>
 			<!-- Register -->
 			<div class="width-550 margin-auto">
-
 				<?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
 					<form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
 						<?php do_action( 'woocommerce_register_form_start' ); ?>

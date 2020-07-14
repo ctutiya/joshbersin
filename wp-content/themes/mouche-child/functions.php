@@ -83,3 +83,9 @@ function login_redirect( $redirect, $user ) {
   return $redirect;
 }
 add_filter( 'woocommerce_login_redirect', 'login_redirect', 10, 2 );
+
+add_action( 'wp_enqueue_scripts', 'mywptheme_child_deregister_styles', 11 );
+function mywptheme_child_deregister_styles() {
+    wp_dequeue_style( 'select2-css' );
+
+}

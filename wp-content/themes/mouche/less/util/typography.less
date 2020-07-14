@@ -150,7 +150,7 @@ em {
 }
 
 .subtitle, a.subtitle {
-  &:not(.text-white):not([class*="color-"]) {
+  &:not(.text-white):not([class*="color-"]):not(:hover) {
     color: @color-dark-grey !important;
   }
 
@@ -168,14 +168,6 @@ em {
 
   .text-white {
     color: white !important;
-  }
-}
-
-a.subtitle {
-  &:hover, &:active {
-    i, & {
-      color: @color-primary;
-    }
   }
 }
 
@@ -258,4 +250,13 @@ a {
 
 .letter-spacing {
   letter-spacing: 0.5px;
+}
+
+
+a.subtitle {
+  &:hover, &:active {
+    i, & {
+      color: @color-primary !important;
+    }
+  }
 }

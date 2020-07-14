@@ -25,6 +25,13 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
+<?php
+$navigation = get_field('navigation', 'options') ?: null;
+$footer = get_field('footer', 'options') ?: null;
+
+get_header( $navigation );
+?>
+
 <section class="header-top-padding-normal header-bottom-padding-normal bg-secondary">
   <div class="container width-950 align-center p-t-50 p-b-50">
     <h1 class="large m-b-25">My Account</h1>
@@ -55,3 +62,5 @@ defined( 'ABSPATH' ) || exit;
     </div>
   </div>
 </section>
+
+<?php get_footer( $footer ); ?>

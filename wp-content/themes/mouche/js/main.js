@@ -10,11 +10,6 @@ jQuery(document).ready(function($) {
     $('.mobile-menu').fadeOut();
   });
 
-  $('nav .menu-item-has-children').on('mouseover click', function(e) {
-    e.preventDefault();
-    $(this).find('.sub-menu').slideDown().parent().addClass('active');
-  });
-
   $('footer .menu-item-has-children, .mobile-menu .menu-item-has-children').on('click', function(e) {
     if ($(window).width() < 991) {
       e.preventDefault();

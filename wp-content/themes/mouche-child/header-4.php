@@ -23,7 +23,7 @@
 	?>
 
 	<nav class="navigation_4">
-		<div class="container-fluid p-l-50 p-r-50">
+		<div class="container-fluid width-1150 margin-auto">
 			<div class="main-menu row no-gutters justify-content-center align-items-center">
 				<div class="col logo-column">
 					<a class="logo" href="<?php echo home_url(); ?>">
@@ -49,8 +49,46 @@
 						));
 					?>
 			</div>
-			<div class="col navigation-extra-elements row flex-column align-items-end">
-        
+			<div class="col navigation-extra-elements row justify-content-end no-gutters">
+				<div class="col-auto">
+					<div class="row no-gutters align-items-center sign-in-button">
+						<img class="m-r-10" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/man.svg" alt="Sign in">
+						<a class="font-14 type-bold subtitle m-r-35" href="#">Sign In</a>
+						<div class="absolute sign-in-dropdown p-t-20 p-b-20 p-l-15 p-r-15">
+							<div class="row justify-content-between align-items-center p-b-15 border-bottom m-b-20">
+								<div class="col-auto">
+									<h2 class="small">Sign in</h2>
+								</div>
+								<div class="col-auto">
+									<a href="<?php echo home_url('/my-account') ?>?register" class="font-16 type-regular">Create an Account</a>
+								</div>
+							</div>
+							<form class="woocommerce-form woocommerce-form-login login" method="post">
+						  	<?php do_action( 'woocommerce_login_form_start' ); ?>
+								<label class="block m-b-20">
+									<div class="type-bold font-14">Email*</div>
+									<input placeholder="Email" id="login-email" type="text" class="m-t-10 woocommerce-Input woocommerce-Input--text input-text full-width" name="username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+						    </label>
+								<label class="block m-b-15">
+									<div class="type-bold font-14">Password*</div>
+									<input class="full-width" type="password" name="password" value="" placeholder="Password">
+								</label>
+								<?php do_action( 'woocommerce_login_form' ); ?>
+								<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
+						  	<button id="sign-in-btn" type="submit" class="btn primary align-items-center full-width large woocommerce-button button woocommerce-form-login__submit justify-content-center" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>"><?php esc_html_e( 'Sign in', 'woocommerce' ); ?></button>
+								<a class="m-t-15 block font-14 type-regular" href="<?php echo esc_url( wp_lostpassword_url() ); ?>">
+						      Lost your password?
+						    </a>
+						  </form>
+						</div>
+					</div>
+				</div>
+				<div class="col-auto">
+					<div class="row no-gutters align-items-center register-button">
+						<img class="m-r-10" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/mail.svg" alt="Register">
+						<a class="font-14 type-bold subtitle" href="#">Register</a>
+					</div>
+				</div>
 			</div>
 			</div>
 		</div>

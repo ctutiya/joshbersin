@@ -59,45 +59,45 @@ get_header( $navigation );
         <div class="p-t-35 p-b-35 p-l-25 p-r-25">
           <ul class="trending-list">
             <li class="row gutter-10">
-              <img class="col-auto square-60 image-cover" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/trending-1.jpg" alt="Trending topic">
+              <div class="col-auto"><img class="square-60 image-cover" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/trending-1.jpg" alt="Trending topic"></div>
               <div class="col">
-                <a href="#" class="subtitle">
+                <a href="#" class="subtitle type-regular">
                   <p class="font-14">Office Meetings Leave the Office</p>
                 </a>
                 <p class="subtitle text-white font-12">15 minutes ago</p>
               </div>
             </li>
             <li class="row gutter-10">
-              <img class="col-auto square-60 image-cover" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/trending-2.jpg" alt="Trending topic">
+              <div class="col-auto"><img class="square-60 image-cover" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/trending-2.jpg" alt="Trending topic"></div>
               <div class="col">
-                <a href="#" class="subtitle">
+                <a href="#" class="subtitle type-regular">
                   <p class="font-14">Experimental Vocal Music in Brooklyn</p>
                 </a>
                 <p class="subtitle text-white font-12">32 minutes ago</p>
               </div>
             </li>
             <li class="row gutter-10">
-              <img class="col-auto square-60 image-cover" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/trending-3.jpg" alt="Trending topic">
+              <div class="col-auto"><img class="square-60 image-cover" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/trending-3.jpg" alt="Trending topic"></div>
               <div class="col">
-                <a href="#" class="subtitle">
+                <a href="#" class="subtitle type-regular">
                   <p class="font-14">Google’s Influence Over Think Tanks</p>
                 </a>
                 <p class="subtitle text-white font-12">38 minutes ago</p>
               </div>
             </li>
             <li class="row gutter-10">
-              <img class="col-auto square-60 image-cover" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/trending-4.jpg" alt="Trending topic">
+              <div class="col-auto"><img class="square-60 image-cover" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/trending-4.jpg" alt="Trending topic"></div>
               <div class="col">
-                <a href="#" class="subtitle">
+                <a href="#" class="subtitle type-regular">
                   <p class="font-14">Homes for Sale in NYC and Connecticut</p>
                 </a>
                 <p class="subtitle text-white font-12">53 minutes ago</p>
               </div>
             </li>
             <li class="row gutter-10">
-              <img class="col-auto square-60 image-cover" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/trending-5.jpg" alt="Trending topic">
+              <div class="col-auto"><img class="square-60 image-cover" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/trending-5.jpg" alt="Trending topic"></div>
               <div class="col">
-                <a href="#" class="subtitle">
+                <a href="#" class="subtitle type-regular">
                   <p class="font-14">Are You There, Dad? It’s Me, Alice</p>
                 </a>
                 <p class="subtitle text-white font-12">1 hour ago</p>
