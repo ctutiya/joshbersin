@@ -1,0 +1,14 @@
+2020-07-17T10:57:37+00:00 CRITICAL Uncaught Less_Exception_Chunk: ParseError: missing opening `{` in style.less on line 857, column 1
+855| 		}
+856| 	}
+857| }
+858| 
+859| // Add your styles above this line
+860|  in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lib/Less/Parser.php:535
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lib/Less/Parser.php(474): Less_Parser->GetRules('/Applications/M...')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lib/Less/Parser.php(346): Less_Parser->_parse('/Applications/M...')
+#2 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lessc.inc.php(147): Less_Parser->parseFile('/Applications/M...')
+#3 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lessc.inc.php(225): lessc->compileFile('/Applications/M...')
+#4 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/ in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche/wp-less/vendor/oyejorge/less.php/lib/Less/Parser.php on line 535
+

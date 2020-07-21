@@ -1000,12 +1000,12 @@ html {
 .generate-gutters(@n, @i: 5) when (@i =< @n) {
   @margin: (@i/2);
   .gutter-@{i} {
-    margin-right: ~"max(-@{margin}px, -2%)";
-    margin-left: ~"max(-@{margin}px, -2%)";
+    margin-right: ~"-@{margin}px";
+    margin-left: ~"-@{margin}px";
 
     > [class*="col"], > [class*="flex-"] {
-      padding-right: ~"min(@{margin}px, 2%)";
-      padding-left: ~"min(@{margin}px, 2%)";
+      padding-right: ~"@{margin}px";
+      padding-left: ~"@{margin}px";
     }
   }
 

@@ -11,6 +11,8 @@ $posts_read = get_option( $posts_read_key ) ?: 0;
 
 update_option( $posts_read_key, $posts_read + 1 );
 
+set_post_views( get_the_ID() );
+
 ?>
 
 <section class="header-top-padding-normal header-bottom-padding-normal bg-secondary">

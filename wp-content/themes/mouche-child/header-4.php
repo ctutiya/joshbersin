@@ -7,6 +7,18 @@
 	<?php wp_head(); ?>
 </head>
 
+<?php
+
+global $current_user;
+
+get_currentuserinfo();
+
+if ( $current_user ) {
+  $user_meta = get_user_meta( $current_user->ID );
+}
+
+?>
+
 <body <?php body_class(); ?>>
 	<?php
 
@@ -50,6 +62,9 @@
 					?>
 			</div>
 			<div class="col navigation-extra-elements row justify-content-end no-gutters">
+
+				<?php if ( !is_user_logged_in() ): ?>
+
 				<div class="col-auto">
 					<div class="row no-gutters align-items-center sign-in-button">
 						<img class="m-r-10" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/man.svg" alt="Sign in">
@@ -89,6 +104,30 @@
 						<a class="font-14 type-bold subtitle" href="#">Register</a>
 					</div>
 				</div>
+
+				<?php else: ?>
+
+					<div class="col-auto">
+						<div class="row no-gutters align-items-center register-button">
+							<img class="m-r-10" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/man.svg" alt="Register">
+							<ul class="navigation-list">
+								<li class="menu-item-has-children">
+									<a class="font-14 type-bold subtitle no-caps" href="#"><?php echo $user_meta['first_name'][0] . ' ' . $user_meta['last_name'][0]; ?></a>
+									<ul class="sub-menu">
+										<li class="menu-item">
+											<a href="<?php echo home_url('/my-account'); ?>">MY ACCOUNT</a>
+										</li>
+										<li class="menu-item">
+											<a href="<?php echo wc_logout_url(); ?>">LOG OUT</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				<?php endif; ?>
+
 			</div>
 			</div>
 		</div>

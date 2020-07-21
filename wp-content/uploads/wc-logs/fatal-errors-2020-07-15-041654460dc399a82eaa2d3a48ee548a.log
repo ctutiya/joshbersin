@@ -1,0 +1,32 @@
+2020-07-15T09:31:37+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/form-edit-account.php on line 68
+
+2020-07-15T09:32:03+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/form-edit-account.php on line 68
+
+2020-07-15T12:29:02+00:00 CRITICAL syntax error, unexpected ')' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/form-edit-account.php on line 251
+
+2020-07-15T13:01:20+00:00 CRITICAL Uncaught Error: Call to undefined function str_contains() in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:172
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/form-edit-account.php(238): is_interest_checked('Articles and Ne...', 'Articles and Ne...')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/wc-core-functions.php(251): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php(160): wc_get_template('myaccount/form-...', Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/wc-template-functions.php(3141): WC_Shortcode_My_Account::edit_account()
+#4 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): woocommerce_account_edit_account('')
+#5 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters( in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 172
+
+2020-07-15T13:01:42+00:00 CRITICAL Uncaught Error: Call to undefined function str_contains() in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:172
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/form-edit-account.php(238): is_interest_checked('Articles and Ne...', 'Articles and Ne...')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/wc-core-functions.php(251): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php(160): wc_get_template('myaccount/form-...', Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/wc-template-functions.php(3141): WC_Shortcode_My_Account::edit_account()
+#4 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): woocommerce_account_edit_account('')
+#5 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters( in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 172
+
+2020-07-15T13:04:48+00:00 CRITICAL Only variables can be passed by reference in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 172
+
+2020-07-15T13:05:24+00:00 CRITICAL syntax error, unexpected '\' (T_NS_SEPARATOR), expecting ')' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 172
+
+2020-07-15T13:05:51+00:00 CRITICAL Only variables can be passed by reference in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 172
+
+2020-07-15T13:05:57+00:00 CRITICAL Only variables can be passed by reference in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 172
+

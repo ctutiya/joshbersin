@@ -1,5 +1,17 @@
 $ = jQuery;
 
+function readURL(input, imageSelector) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $(imageSelector).attr('src', e.target.result);
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
 $(document).ready(function(){
   // Scroll to top
   $('#scroll-top').on('click', function(event) {
@@ -25,4 +37,72 @@ $(document).ready(function(){
   $('#afreg_additional_118').attr('name', 'last_name');
   $('#afreg_additional_121').attr('name', 'email');
   $('#afreg_additional_128').attr('name', 'password');
+
+  // Update profile picture image on my account dashboard
+  $('#profile-picture-url').on('change', function() {
+    readURL(this, '#profile-picture');
+  });
+
+  // My account edit popup
+  $('.close-account-edit').on('click', function(event) {
+    event.preventDefault();
+
+    $('.account-edit-overlay').removeClass('active');
+  });
+
+  $('.open-account-edit-popup').on('click', function(event) {
+      event.preventDefault();
+
+      $('.account-edit-overlay').addClass('active');
+
+      var popupId = $(this).attr('id');
+
+      $('[data-edit]').hide();
+      $('[data-edit="' + popupId + '"]').show();
+  });
+
+  // User registration password match
+  $('form.register').on('submit', function(event) {
+      event.preventDefault();
+
+      if ($('input[name="password"]').val() === $('input[name="afreg_additional_129"]').val()) {
+        alert('Passwords don\'t match');
+      } else {
+        $('form.register')[0].submit();
+      }
+  });
+
+  // Account details password match
+  $('form.change-account-details').on('submit', function(event) {
+      event.preventDefault();
+
+      if (($(this).find('input[name="password"]').val() !== $(this).find('input[name="confirm-password"]').val()) && $(this).find('input[name="password"]').val() !== '') {
+        alert('Passwords don\'t match');
+      } else {
+        $('form.change-account-details')[0].submit();
+      }
+  });
+
+  // Featured articles pagination
+  var featuredPagination = $('.featured-articles-row');
+
+  featuredPagination.owlCarousel({
+    items: 4,
+    slideBy: 4,
+    slideTransition: '',
+    dots: false,
+  });
+
+  $('#featured-prev').on('click', function(event) {
+      event.preventDefault();
+
+      featuredPagination.trigger('prev.owl.carousel');
+  });
+
+  $('#featured-next').on('click', function(event) {
+      event.preventDefault();
+
+      featuredPagination.trigger('next.owl.carousel');
+  });
+
 });

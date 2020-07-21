@@ -1,0 +1,49 @@
+2020-07-20T05:39:52+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on null in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php:73
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/template-loader.php(106): include()
+#1 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(19): require_once('/Applications/M...')
+#2 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#3 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php on line 73
+
+2020-07-20T05:49:02+00:00 CRITICAL Uncaught Exception: DateTime::__construct(): Failed to parse time string (1595223568) at position 7 (5): Unexpected character in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:208
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php(208): DateTime->__construct('1595223568')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php(85): time_ago()
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/template-loader.php(106): include('/Applications/M...')
+#3 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(19): require_once('/Applications/M...')
+#4 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 208
+
+2020-07-20T06:45:18+00:00 CRITICAL Uncaught TypeError: Argument 1 passed to flatten() must be of the type array, string given, called in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php on line 173 and defined in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:238
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php(173): flatten('Array161Array')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/template-loader.php(106): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(19): require_once('/Applications/M...')
+#3 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#4 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 238
+
+2020-07-20T06:49:42+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php on line 173
+
+2020-07-20T06:50:08+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php on line 173
+
+2020-07-20T06:52:09+00:00 CRITICAL Uncaught TypeError: Argument 1 passed to flatten() must be of the type array, int given, called in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php on line 113 and defined in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:238
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php(113): flatten(2)
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/template-loader.php(106): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(19): require_once('/Applications/M...')
+#3 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#4 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 238
+
+2020-07-20T06:52:21+00:00 CRITICAL Uncaught TypeError: Argument 1 passed to flatten() must be of the type array, int given, called in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php on line 113 and defined in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:238
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php(113): flatten(2)
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/template-loader.php(106): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(19): require_once('/Applications/M...')
+#3 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#4 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 238
+

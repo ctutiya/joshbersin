@@ -45,9 +45,11 @@ get_header( $navigation );
   <div class="container">
     <div class="row gutter-30">
       <div class="col-auto">
-        <?php
-        do_action( 'woocommerce_account_navigation' );
-        ?>
+        <div id="myaccount-navigation">
+          <?php
+          do_action( 'woocommerce_account_navigation' );
+          ?>
+        </div>
       </div>
       <div class="col">
         <?php

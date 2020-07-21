@@ -19,6 +19,22 @@ get_header( $navigation );
   </div>
 </section>
 
+<?php
+
+$args = array(
+    'post_status' => array(
+      'future'
+    ),
+    'post_type' => 'webinars',
+    'posts_per_page' => -1,
+    'order' => 'ASC',
+    'orderby' => 'date',
+);
+
+$webinars = get_posts( $args );
+
+?>
+
 <section class="block-top-padding-large block-bottom-padding-large color-tertiary">
   <div class="container">
     <div class="row justify-content-between align-items-end p-b-25 border-bottom m-b-25">
@@ -27,76 +43,70 @@ get_header( $navigation );
         <p>Register to join an upcoming virtual event.</p>
       </div>
       <div class="row no-gutters">
-        <a href="#" class="square-30 border color-dark row no-gutters align-items-center justify-content-center">
+        <a href="#" id="webinars-prev" class="square-30 border color-dark row no-gutters align-items-center justify-content-center">
           <i class="icon-play_arrow rotate-180 font-14"></i>
         </a>
-        <a href="#" class="square-30 border-right border-bottom border-top color-dark row no-gutters align-items-center justify-content-center">
+        <a href="#" id="webinars-next" class="square-30 border-right border-bottom border-top color-dark row no-gutters align-items-center justify-content-center">
           <i class="icon-play_arrow font-14"></i>
         </a>
       </div>
     </div>
     <div id="webinars">
-      <div class="row justify-content-between gutter-35">
-        <div class="col">
-          <div class="event-item p-t-60 p-b-60 p-l-40 p-r-40">
-            <h2 class="small m-b-10">Data Security, Trust, and Privacy for the Changing World</h2>
-            <div class="font-16 m-b-25">
-              Tuesday, June 23, 2020<br>10 AM MT / 12PM EDT<br>Promo Code: SAVE20
+      <div class="owl-carousel owl-theme webinars-carousel">
+
+      <?php
+
+      $items = array_chunk( $webinars, 6 );
+
+      for ($i=0; $i < sizeof( $items ); $i++) {
+        ?>
+
+        <div class="row gutter-35 item">
+
+        <?php
+
+        foreach ($items[$i] as $post) {
+          setup_postdata( $post );
+
+          ?>
+
+          <div class="col-md-4">
+            <div class="event-item p-t-60 p-b-60 p-l-40 p-r-40">
+              <h2 class="small m-b-10"><?php the_title(); ?></h2>
+              <div class="font-16 m-b-25">
+                <?php the_time('l, F j, Y'); ?>
+                <br>
+                <?php
+
+                $date_EST = new DateTime( get_the_time(), new DateTimeZone('UTC') );
+                $date_EST->setTimezone( new DateTimeZone('EST') );
+
+                $date_MT = new DateTime( get_the_time(), new DateTimeZone('UTC') );
+                $date_MT->setTimezone( new DateTimeZone('America/Edmonton') );
+
+                ?>
+                <?php echo $date_MT->format( 'h:iA') . ' MT / ' . $date_EST->format( 'h:iA') . ' EST'; ?>
+                <br>Promo Code: SAVE20
+              </div>
+              <a href="#" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
             </div>
-            <a href="#" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
           </div>
+
+          <?php
+        }
+
+        ?>
+
         </div>
-        <div class="col">
-          <div class="event-item p-t-60 p-b-60 p-l-40 p-r-40">
-            <h2 class="small m-b-10">Data Security, Trust, and Privacy for the Changing World</h2>
-            <div class="font-16 m-b-25">
-              Tuesday, June 23, 2020<br>10 AM MT / 12PM EDT<br>Promo Code: SAVE20
-            </div>
-            <a href="#" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="event-item p-t-60 p-b-60 p-l-40 p-r-40">
-            <h2 class="small m-b-10">Data Security, Trust, and Privacy for the Changing World</h2>
-            <div class="font-16 m-b-25">
-              Tuesday, June 23, 2020<br>10 AM MT / 12PM EDT<br>Promo Code: SAVE20
-            </div>
-            <a href="#" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-between gutter-35">
-        <div class="col">
-          <div class="event-item p-t-60 p-b-60 p-l-40 p-r-40">
-            <h2 class="small m-b-10">Data Security, Trust, and Privacy for the Changing World</h2>
-            <div class="font-16 m-b-25">
-              Tuesday, June 23, 2020<br>10 AM MT / 12PM EDT<br>Promo Code: SAVE20
-            </div>
-            <a href="#" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="event-item p-t-60 p-b-60 p-l-40 p-r-40">
-            <h2 class="small m-b-10">Data Security, Trust, and Privacy for the Changing World</h2>
-            <div class="font-16 m-b-25">
-              Tuesday, June 23, 2020<br>10 AM MT / 12PM EDT<br>Promo Code: SAVE20
-            </div>
-            <a href="#" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="event-item p-t-60 p-b-60 p-l-40 p-r-40">
-            <h2 class="small m-b-10">Data Security, Trust, and Privacy for the Changing World</h2>
-            <div class="font-16 m-b-25">
-              Tuesday, June 23, 2020<br>10 AM MT / 12PM EDT<br>Promo Code: SAVE20
-            </div>
-            <a href="#" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
-          </div>
-        </div>
-      </div>
+
+        <?php
+      }
+      ?>
     </div>
   </div>
 </section>
+
+<?php wp_reset_postdata(); ?>
 
 <section class="block-top-padding-large block-bottom-padding-large">
   <div class="container">

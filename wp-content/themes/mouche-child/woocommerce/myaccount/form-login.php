@@ -38,14 +38,16 @@ get_header( $navigation );
 
 <section class="block-top-padding-large block-bottom-padding-large">
 	<div class="container">
-
-		<?php do_action( 'woocommerce_before_customer_login_form' ); ?>
-
 		<?php
 		if ( isset( $_GET['register'] ) ): ?>
 			<!-- Register -->
 			<div class="width-550 margin-auto">
+				<div class="m-b-20">
+					<?php do_action( 'woocommerce_before_customer_login_form' ); ?>
+				</div>
+
 				<?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
+
 					<form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
 						<?php do_action( 'woocommerce_register_form_start' ); ?>
 						<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>

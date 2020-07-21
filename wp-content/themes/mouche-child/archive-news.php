@@ -3,6 +3,8 @@ $navigation = get_field('navigation', 'options') ?: null;
 $footer = get_field('footer', 'options') ?: null;
 
 get_header( $navigation );
+
+$big = 999999999;
 ?>
 
 <section class="header-top-padding-normal header-bottom-padding-normal bg-secondary">
@@ -20,32 +22,56 @@ get_header( $navigation );
     <div class="row gutter-30 margin-responsive">
       <div class="flex-73">
         <div id="news-items">
-          <?php get_template_part( 'template-parts/content', 'news' ); ?>
-          <?php get_template_part( 'template-parts/content', 'news' ); ?>
-          <?php get_template_part( 'template-parts/content', 'news' ); ?>
-          <?php get_template_part( 'template-parts/content', 'news' ); ?>
-          <?php get_template_part( 'template-parts/content', 'news' ); ?>
-          <?php get_template_part( 'template-parts/content', 'news' ); ?>
+          <?php
+
+          $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
+          $args = array(
+            'post__not_in' => $exclude_posts,
+            'post_type' => 'news',
+            'post_status' => array(
+              'publish'
+            ),
+            'posts_per_page' => 6,
+            'order' => 'DESC',
+            'orderby' => 'date',
+            'paged' => $paged,
+          );
+
+          $the_query = new WP_Query( $args );
+
+          if ( $the_query->have_posts() ) {
+            while ( $the_query->have_posts() ) {
+              $the_query->the_post();
+              $category = get_the_category();
+
+              get_template_part( 'template-parts/content', 'news' );
+            }
+          }
+
+          ?>
+
         </div>
         <div class="pagination block-top-padding-large block-bottom-padding-large">
           <div class="nav-links">
-            <a class="prev page-numbers" href="#">
-              <div class="row align-items-center">
-                <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/arrow.svg" alt="Previous post">
-                <p class="font-14 type-bold m-l-5">Prev</p>
-              </div>
-            </a>
-            <span aria-current="page" class="page-numbers current">1</span>
-            <a class="page-numbers" href="#">2</a>
-            <a class="next page-numbers" href="#">
-              <div class="row align-items-center">
-                <p class="font-14 type-bold m-r-5">Next</p>
-                <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/arrow.svg" class="rotate-180" alt="Next post">
-              </div>
-            </a>
+
+          <?php
+
+            echo paginate_links( array(
+                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                'format' => '?paged=%#%',
+                'prev_next' => true,
+                'current' => max( 1, get_query_var('paged') ),
+                'total' =>  $the_query->max_num_pages,
+                'show_all' => false,
+                'prev_text' => '<div class="row align-items-center"><img src="' . get_bloginfo('stylesheet_directory') . '/images/icon/arrow.svg" alt="Previous post"><p class="font-14 type-bold m-l-5">Prev</p></div>',
+                'next_text' => '<div class="row align-items-center"><p class="font-14 type-bold m-r-5">Next</p><img src="' . get_bloginfo('stylesheet_directory') . '/images/icon/arrow.svg" class="rotate-180" alt="Next post"></div>',
+            ) );
+
+            ?>
+
           </div>
         </div>
-
       </div>
       <div class="col">
         <div class="widget">
