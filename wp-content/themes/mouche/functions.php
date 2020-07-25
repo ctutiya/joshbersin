@@ -4197,90 +4197,17 @@ wp_localize_script( 'main-js', 'MyAjax', array(
 }
 add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
 
-
-function post_like_table_create() {
-
-global $wpdb;
-$table_name = $wpdb->prefix. "post_like_table";
-global $charset_collate;
-$charset_collate = $wpdb->get_charset_collate();
-global $db_version;
-
-if( $wpdb->get_var("SHOW TABLES LIKE '" . $table_name . "'") != $table_name)
-{ $create_sql = "CREATE TABLE " . $table_name . " (
-id INT(11) NOT NULL auto_increment,
-postid INT(11) NOT NULL ,
-
-clientip VARCHAR(40) NOT NULL ,
-
-PRIMARY KEY (id))$charset_collate;";
-require_once(ABSPATH . "wp-admin/includes/upgrade.php");
-dbDelta( $create_sql );
-}
-
-
-
-//register the new table with the wpdb object
-if (!isset($wpdb->post_like_table)) {
-  $wpdb->post_like_table = $table_name;
-  //add the shortcut so you can use $wpdb->stats
-  $wpdb->tables[] = str_replace($wpdb->prefix, '', $table_name);
-}
-
-}
-add_action( 'init', 'post_like_table_create');
-
-function get_client_ip() {
-  $ip = $_SERVER['REMOTE_ADDR'];
-
-  return $ip;
-}
-
-function my_action_callback() {
-  check_ajax_referer( 'my-special-string', 'security' );
-  $postid = intval( $_POST['postid'] );
-  $clientip = get_client_ip();
-  $like = 0;
-  $dislike = 0;
-  $like_count = 0;
-
-  global $wpdb;
-  $row = $wpdb->get_results( "SELECT id FROM $wpdb->post_like_table WHERE postid = '$postid' AND clientip = '$clientip'");
-
-  if( empty( $row ) ){
-    $wpdb->insert( $wpdb->post_like_table, array( 'postid' => $postid, 'clientip' => $clientip ), array( '%d', '%s' ) );
-    $like = 1;
-  }
-
-  if( ! empty( $row ) ){
-    //delete row
-    $wpdb->delete( $wpdb->post_like_table, array( 'postid' => $postid, 'clientip'=> $clientip ), array( '%d','%s' ) );
-    $dislike = 1;
-  }
-
-  //calculate like count from db.
-  $totalrow = $wpdb->get_results( "SELECT id FROM $wpdb->post_like_table WHERE postid = '$postid'");
-  $total_like = $wpdb->num_rows;
-  $data = array( 'postid'=>$postid,'likecount'=>$total_like,'clientip'=>$clientip,'like'=>$like,'dislike'=>$dislike);
-  echo json_encode($data);
-  //echo $clientip;
-  die(); // this is required to return a proper result
-}
-
-add_action( 'wp_ajax_my_action', 'my_action_callback' );
-add_action( 'wp_ajax_nopriv_my_action', 'my_action_callback' );
-
 // Catalog page filters
 function blog_sidebar() {
-    register_sidebar( array(
-        'name'          => __( 'Blog sidebar', 'textdomain' ),
-        'id'            => 'blog',
-        'description'   => __( 'Widgets in this area will be shown on learn more page.', 'textdomain' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<p class="widgettitle m-b-30 font-18 type-medium">',
-        'after_title'   => '</p>',
-    ) );
+  register_sidebar( array(
+      'name'          => __( 'Blog sidebar', 'textdomain' ),
+      'id'            => 'blog',
+      'description'   => __( 'Widgets in this area will be shown on learn more page.', 'textdomain' ),
+      'before_widget' => '<div id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<p class="widgettitle m-b-30 font-18 type-medium">',
+      'after_title'   => '</p>',
+  ) );
 }
 add_action( 'widgets_init', 'blog_sidebar' );
 

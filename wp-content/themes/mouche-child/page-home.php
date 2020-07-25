@@ -125,10 +125,12 @@ $big = 999999999;
 
               <li class="row gutter-10">
                 <div class="col-auto">
-                  <img class="square-60 image-cover" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                  <a href="<?php the_permalink() ?>">
+                    <img class="square-60 image-cover" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                  </a>
                 </div>
                 <div class="col">
-                  <a href="#" class="subtitle type-regular">
+                  <a href="<?php the_permalink() ?>" class="subtitle type-regular">
                     <p class="font-14"><?php the_title(); ?></p>
                   </a>
                   <p class="subtitle text-white font-12"><?php echo time_ago(); ?></p>
@@ -155,8 +157,6 @@ $big = 999999999;
 
 <?php
 
-$featured_articles_paged = isset( $_GET['paged_featured'] ) ? (int) $_GET['paged_featured'] : 1;
-
 $args = array(
   'tag_id' => 45,
   'post_status' => array(
@@ -167,7 +167,6 @@ $args = array(
   'orderby' => 'date',
   'post__not_in' => $exclude_posts,
   'post_type' => 'post',
-  'paged' => $featured_articles_paged,
 );
 
 $featured_posts = new WP_Query( $args );
@@ -191,7 +190,7 @@ $exclude_posts = array_flatten( $exclude_posts );
         </a>
       </div>
     </div>
-    <div class="p-t-20 featured-articles-row" id="featured-articles-row">
+    <div class="p-t-20 featured-articles-row featured-carousel" id="featured-articles-row">
       <?php
 
       if ( $featured_posts->have_posts() ) {
@@ -243,6 +242,21 @@ $exclude_posts = array_flatten( $exclude_posts );
                 $the_query->the_post();
                 $category = get_the_category();
 
+                global $wpdb;
+
+                $l=0;
+                $postid=get_the_id();
+                $clientip=get_client_ip();
+                $row1 = $wpdb->get_results( "SELECT id FROM $wpdb->post_like_table WHERE postid = '$postid' AND clientip = '$clientip'");
+
+                if( !empty( $row1 ) ){
+                  $l=1;
+                }
+
+                $totalrow1 = $wpdb->get_results( "SELECT id FROM $wpdb->post_like_table WHERE postid = '$postid'");
+
+                $total_like1 = $wpdb->num_rows;
+
                 ?>
 
                 <div class="row gutter-25 m-l-25 m-r-25 latest-articles-item">
@@ -267,7 +281,7 @@ $exclude_posts = array_flatten( $exclude_posts );
                       </div>
                       <div class="row col-auto align-items-center">
                         <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/heart.svg" alt="Likes">
-                        <p class="text-white subtitle font-12 p-l-5">830</p>
+                        <p class="text-white subtitle font-12 p-l-5"><?php echo $total_like1 ?: 0; ?></p>
                       </div>
                     </div>
                   </div>

@@ -68,11 +68,16 @@ $webinars = get_posts( $args );
         foreach ($items[$i] as $post) {
           setup_postdata( $post );
 
+          $promo_code = get_field( 'coupon_code', get_the_ID() );
+          $link_to_event_page = get_field( 'link_to_event_page', get_the_ID() );
+
           ?>
 
           <div class="col-md-4">
             <div class="event-item p-t-60 p-b-60 p-l-40 p-r-40">
-              <h2 class="small m-b-10"><?php the_title(); ?></h2>
+              <a href="<?php echo $link_to_event_page ?: '#'; ?>" class="color-tertiary">
+                <h2 class="small m-b-10"><?php the_title(); ?></h2>
+              </a>
               <div class="font-16 m-b-25">
                 <?php the_time('l, F j, Y'); ?>
                 <br>
@@ -86,9 +91,11 @@ $webinars = get_posts( $args );
 
                 ?>
                 <?php echo $date_MT->format( 'h:iA') . ' MT / ' . $date_EST->format( 'h:iA') . ' EST'; ?>
-                <br>Promo Code: SAVE20
+                <?php if ( $promo_code ): ?>
+                  <br>Promo Code: <?php echo $promo_code; ?>
+                <?php endif; ?>
               </div>
-              <a href="#" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
+              <a href="<?php echo $link_to_event_page ?: '#'; ?>" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
             </div>
           </div>
 
@@ -143,6 +150,22 @@ $webinars = get_posts( $args );
   </div>
 </section>
 
+<?php
+
+$args = array(
+    'post_status' => array(
+      'future'
+    ),
+    'post_type' => 'conferences',
+    'posts_per_page' => -1,
+    'order' => 'ASC',
+    'orderby' => 'date',
+);
+
+$conferences = get_posts( $args );
+
+?>
+
 <section class="block-top-padding-large block-bottom-padding-large color-tertiary">
   <div class="container">
     <div class="row justify-content-between align-items-end p-b-25 border-bottom m-b-25">
@@ -151,74 +174,69 @@ $webinars = get_posts( $args );
         <p>Hear Josh Bersin in person.</p>
       </div>
       <div class="row no-gutters">
-        <a href="#" class="square-30 border color-dark row no-gutters align-items-center justify-content-center">
+        <a href="#" id="conferences-prev" class="square-30 border color-dark row no-gutters align-items-center justify-content-center">
           <i class="icon-play_arrow rotate-180 font-14"></i>
         </a>
-        <a href="#" class="square-30 border-right border-bottom border-top color-dark row no-gutters align-items-center justify-content-center">
+        <a href="#" id="conferences-next" class="square-30 border-right border-bottom border-top color-dark row no-gutters align-items-center justify-content-center">
           <i class="icon-play_arrow font-14"></i>
         </a>
       </div>
     </div>
     <div id="conferences">
-      <div class="row justify-content-between gutter-35">
-        <div class="col">
-          <div class="event-item p-t-60 p-b-60 p-l-40 p-r-40">
-            <h2 class="small m-b-10">Data Security, Trust, and Privacy for the Changing World</h2>
-            <div class="font-16 m-b-25">
-              New York, New York<br>June 01, 02, & 03, 2020<br>Promo Code: SAVE20
+      <div class="owl-carousel owl-theme conferences-carousel">
+
+        <?php
+
+        $items = array_chunk( $conferences, 6 );
+
+        for ( $i=0; $i < sizeof( $items ); $i++ ) {
+          ?>
+
+          <div class="row gutter-35 item">
+
+          <?php
+
+          foreach ( $items[$i] as $post ) {
+            setup_postdata( $post );
+
+            $promo_code = get_field( 'coupon_code', get_the_ID() );
+            $link_to_event_page = get_field( 'link_to_event_page', get_the_ID() );
+            $location = get_field( 'location', get_the_ID() );
+            $event_date = get_field( 'event_date', get_the_ID() );
+
+            ?>
+
+            <div class="col-md-4">
+              <div class="event-item p-t-60 p-b-60 p-l-40 p-r-40">
+                <a href="<?php echo $link_to_event_page ?: '#'; ?>" class="color-tertiary">
+                  <h2 class="small m-b-10"><?php the_title(); ?></h2>
+                </a>
+                <div class="font-16 m-b-25">
+                  <?php echo $location; ?>
+                  <br>
+                  <?php echo $event_date; ?>
+                  <?php if ( $promo_code ): ?>
+                    <br>Promo Code: <?php echo $promo_code; ?>
+                  <?php endif; ?>
+                </div>
+                <a href="<?php echo $link_to_event_page ?: '#'; ?>" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
+              </div>
             </div>
-            <a href="#" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
+
+            <?php
+          }
+
+          ?>
+
           </div>
-        </div>
-        <div class="col">
-          <div class="event-item p-t-60 p-b-60 p-l-40 p-r-40">
-            <h2 class="small m-b-10">Data Security, Trust, and Privacy for the Changing World</h2>
-            <div class="font-16 m-b-25">
-              New York, New York<br>June 01, 02, & 03, 2020<br>Promo Code: SAVE20
-            </div>
-            <a href="#" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="event-item p-t-60 p-b-60 p-l-40 p-r-40">
-            <h2 class="small m-b-10">Data Security, Trust, and Privacy for the Changing World</h2>
-            <div class="font-16 m-b-25">
-              New York, New York<br>June 01, 02, & 03, 2020<br>Promo Code: SAVE20
-            </div>
-            <a href="#" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-between gutter-35">
-        <div class="col">
-          <div class="event-item p-t-60 p-b-60 p-l-40 p-r-40">
-            <h2 class="small m-b-10">Data Security, Trust, and Privacy for the Changing World</h2>
-            <div class="font-16 m-b-25">
-              New York, New York<br>June 01, 02, & 03, 2020<br>Promo Code: SAVE20
-            </div>
-            <a href="#" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="event-item p-t-60 p-b-60 p-l-40 p-r-40">
-            <h2 class="small m-b-10">Data Security, Trust, and Privacy for the Changing World</h2>
-            <div class="font-16 m-b-25">
-              New York, New York<br>June 01, 02, & 03, 2020<br>Promo Code: SAVE20
-            </div>
-            <a href="#" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="event-item p-t-60 p-b-60 p-l-40 p-r-40">
-            <h2 class="small m-b-10">Data Security, Trust, and Privacy for the Changing World</h2>
-            <div class="font-16 m-b-25">
-              New York, New York<br>June 01, 02, & 03, 2020<br>Promo Code: SAVE20
-            </div>
-            <a href="#" class="btn primary small">learn more <i class="icon-arrow_right_alt m-l-5"></i></a>
-          </div>
-        </div>
+
+          <?php
+        }
+        ?>
       </div>
     </div>
   </div>
 </section>
+
+<?php wp_reset_postdata(); ?>
 <?php get_footer( $footer ); ?>

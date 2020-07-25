@@ -170,15 +170,15 @@ footer {
 
 			&:hover {
 				path {
-					fill: @default-link-hover;
+					fill: @color-primary;
 				}
 			}
 		}
 
 		#like-button {
-			&.active, &:hover {
+			&.liked, &:hover {
 				path {
-					 fill: @default-link-hover;
+					 fill: @color-primary;
 			 	}
 			}
 		}
@@ -893,7 +893,15 @@ span.page-numbers.dots {
 	}
 }
 
-.webinars-carousel {
+.webinars-carousel, .conferences-carousel {
+	.row:first-child {
+		margin-top: -35px;
+	}
+
+	.col-md-4 {
+	    margin-top: 35px;
+	}
+
 	.owl-stage-outer {
 		overflow: visible;
 	}
@@ -909,6 +917,14 @@ span.page-numbers.dots {
 
 .timeline-Widget a {
     color: @color-primary !important;
+}
+
+[id*="-next"], [id*="-prev"] {
+	&.disabled {
+		.icon-play_arrow {
+			color: #BCBFC2;
+		}
+	}
 }
 
 // Add your styles above this line

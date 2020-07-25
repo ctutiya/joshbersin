@@ -75,7 +75,12 @@ get_header( $navigation );
 						<?php do_action( 'woocommerce_register_form_end' ); ?>
 
 					</form>
-					<div class="p-t-20 m-t-25 border-top inline-block full-width">Already have an account?<a class="color-tertiary m-l-10" href="<?php echo home_url('/my-account') ?>">Sign in</a></div>
+
+					<?php
+						$redirect = isset( $_GET['redirect-url'] ) ? '?redirect-url=' . $_GET['redirect-url'] : '';
+					?>
+
+					<div class="p-t-20 m-t-25 border-top inline-block full-width">Already have an account?<a class="color-tertiary m-l-10" href="<?php echo home_url('/my-account') . $redirect; ?>">Sign in</a></div>
 				</div>
 
 				<?php endif; ?>
@@ -101,13 +106,18 @@ get_header( $navigation );
 				<a class="m-t-15 block type-bold font-16" href="<?php echo esc_url( wp_lostpassword_url() ); ?>">
 		      Forgot your password?
 		    </a>
-				<div class="m-t-15 font-16">Don’t have an account? <a class="type-bold" href="<?php echo home_url('/my-account') ?>?register">Register Here</a></div>
+
+				<?php
+					$redirect = isset( $_GET['redirect-url'] ) ? '&redirect-url=' . $_GET['redirect-url'] : '';
+				?>
+
+				<div class="m-t-15 font-16">Don’t have an account? <a class="type-bold" href="<?php echo home_url('/my-account') . '?register' . $redirect; ?>">Register Here</a></div>
 		  </form>
 		<?php endif; ?>
 	</div>
 </section>
 
-<?php if ( isset( $_GET['redirect-url'] ) ): ?>
+<?php if ( isset( $_GET['redirect-url'] ) && isset( $_GET['register'] ) ): ?>
 	<div class="registration-overlay row no-gutters justify-content-center align-items-center">
 		<div class="registration-popup relative bg-white m-t-50 m-b-50 width-350 p-l-35 p-r-35 p-t-50 p-b-50 align-center color-tertiary">
 			<img class="m-b-20" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/josh-bersin-logo-square.png" alt="Register to continue">

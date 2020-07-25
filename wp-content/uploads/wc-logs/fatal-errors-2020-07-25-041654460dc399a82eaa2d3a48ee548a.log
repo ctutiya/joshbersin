@@ -1,0 +1,91 @@
+2020-07-25T09:04:31+00:00 CRITICAL Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/form-login.php on line 120
+
+2020-07-25T09:04:52+00:00 CRITICAL Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/form-login.php on line 120
+
+2020-07-25T09:05:03+00:00 CRITICAL Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/form-login.php on line 120
+
+2020-07-25T09:05:23+00:00 CRITICAL Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/form-login.php on line 120
+
+2020-07-25T09:14:26+00:00 CRITICAL syntax error, unexpected ')' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/single-resources.php on line 44
+
+2020-07-25T09:15:25+00:00 CRITICAL syntax error, unexpected ')' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/single-resources.php on line 44
+
+2020-07-25T09:15:40+00:00 CRITICAL syntax error, unexpected ')' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/single-resources.php on line 44
+
+2020-07-25T09:16:21+00:00 CRITICAL syntax error, unexpected ')' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/single-resources.php on line 44
+
+2020-07-25T09:45:18+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/single-resources.php on line 48
+
+2020-07-25T09:56:44+00:00 CRITICAL Uncaught Error: [] operator not supported for strings in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:343
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): download_resource('')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-settings.php(540): do_action('init')
+#4 /Applications/MAMP/htdocs/joshbersin/wp-config.php(90): require_once('/Applications/M...')
+#5 /Applications/MAMP/htdocs/joshbersin/wp-load.php(37): require_once('/Applications/M...')
+#6 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(13): require_once('/Applications/M...')
+#7 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#8 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 343
+
+2020-07-25T10:06:32+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
+
+2020-07-25T10:07:12+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
+
+2020-07-25T10:07:47+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 54
+
+2020-07-25T10:09:14+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 54
+
+2020-07-25T10:09:47+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 54
+
+2020-07-25T10:10:05+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 54
+
+2020-07-25T10:10:34+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 54
+
+2020-07-25T10:11:06+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
+
+2020-07-25T10:11:30+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 53
+
+2020-07-25T10:11:41+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 54
+
+2020-07-25T10:12:11+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 53
+
+2020-07-25T10:12:37+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
+
+2020-07-25T10:13:36+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
+
+2020-07-25T10:14:26+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 57
+
+2020-07-25T10:14:45+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 57
+
+2020-07-25T10:15:10+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 58
+
+2020-07-25T10:15:31+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 54
+
+2020-07-25T10:15:46+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 58
+
+2020-07-25T10:16:01+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 59
+
+2020-07-25T10:16:15+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 54
+
+2020-07-25T10:16:53+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
+
+2020-07-25T10:17:07+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
+
+2020-07-25T10:17:34+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
+
+2020-07-25T10:18:00+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
+
+2020-07-25T10:18:15+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
+
+2020-07-25T10:18:58+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
+
+2020-07-25T10:19:13+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
+
+2020-07-25T10:20:03+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
+
+2020-07-25T10:20:54+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
+
+2020-07-25T10:23:01+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
+

@@ -1,4 +1,23 @@
-<?php $category = get_the_category(); ?>
+<?php
+
+$category = get_the_category();
+
+global $wpdb;
+
+$l=0;
+$postid=get_the_id();
+$clientip=get_client_ip();
+$row1 = $wpdb->get_results( "SELECT id FROM $wpdb->post_like_table WHERE postid = '$postid' AND clientip = '$clientip'");
+
+if( !empty( $row1 ) ){
+  $l=1;
+}
+
+$totalrow1 = $wpdb->get_results( "SELECT id FROM $wpdb->post_like_table WHERE postid = '$postid'");
+
+$total_like1 = $wpdb->num_rows;
+
+?>
 
 <div class="item p-l-25 p-r-25 featured-articles-item">
   <a href="#">
@@ -21,7 +40,7 @@
     </div>
     <div class="row col-auto align-items-center">
       <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/heart.svg" alt="Likes">
-      <p class="text-white subtitle font-12 p-l-5">3,354</p>
+      <p class="text-white subtitle font-12 p-l-5"><?php echo $total_like1; ?></p>
     </div>
   </div>
 </div>

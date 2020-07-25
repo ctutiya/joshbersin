@@ -10,22 +10,6 @@ jQuery(document).ready(function($) {
     autoplayHoverPause: true
   });
 
-  var webinars = $('.webinars-carousel');
-
-  webinars.owlCarousel({
-    items: 1,
-    dots: false,
-  });
-
-  $('#webinars-prev').on('click', function(event) {
-      event.preventDefault();
-
-      webinars.trigger('prev.owl.carousel');
-  });
-
-  $('#webinars-next').on('click', function(event) {
-      event.preventDefault();
-
-      webinars.trigger('next.owl.carousel');
-  });
+  customCarousel('webinars', { items: 1 });
+  customCarousel('conferences', { items: 1 });
 });

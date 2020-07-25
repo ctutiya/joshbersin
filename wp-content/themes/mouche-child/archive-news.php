@@ -24,25 +24,9 @@ $big = 999999999;
         <div id="news-items">
           <?php
 
-          $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-
-          $args = array(
-            'post__not_in' => $exclude_posts,
-            'post_type' => 'news',
-            'post_status' => array(
-              'publish'
-            ),
-            'posts_per_page' => 6,
-            'order' => 'DESC',
-            'orderby' => 'date',
-            'paged' => $paged,
-          );
-
-          $the_query = new WP_Query( $args );
-
-          if ( $the_query->have_posts() ) {
-            while ( $the_query->have_posts() ) {
-              $the_query->the_post();
+          if ( have_posts() ) {
+            while ( have_posts() ) {
+              the_post();
               $category = get_the_category();
 
               get_template_part( 'template-parts/content', 'news' );
@@ -57,12 +41,14 @@ $big = 999999999;
 
           <?php
 
+            global $wp_query;
+
             echo paginate_links( array(
                 'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
                 'format' => '?paged=%#%',
                 'prev_next' => true,
                 'current' => max( 1, get_query_var('paged') ),
-                'total' =>  $the_query->max_num_pages,
+                'total' =>  $wp_query->max_num_pages,
                 'show_all' => false,
                 'prev_text' => '<div class="row align-items-center"><img src="' . get_bloginfo('stylesheet_directory') . '/images/icon/arrow.svg" alt="Previous post"><p class="font-14 type-bold m-l-5">Prev</p></div>',
                 'next_text' => '<div class="row align-items-center"><p class="font-14 type-bold m-r-5">Next</p><img src="' . get_bloginfo('stylesheet_directory') . '/images/icon/arrow.svg" class="rotate-180" alt="Next post"></div>',

@@ -64,17 +64,14 @@ function get_the_user_ip() {
 function my_forcelogin_bypass( $bypass, $url ) {
   $is_blog_article = is_singular('post');
   $is_resource = is_singular('resources');
-
   $user_ip = get_the_user_ip();
   $posts_read = get_option( 'posts_read_' . $user_ip ) ?: 0;
   $has_reached_blog_limit = $posts_read >= 3;
 
-  $can_read_post = !($is_blog_article && $has_reached_blog_limit);
-  $can_read_resource = !$is_resource;
-
+  $can_read_post = !($is_blog_article && $has_reached_blog_limit && !is_user_logged_in());
   $bypass = true;
 
-  if ( !$can_read_post || !$can_read_resource ) {
+  if ( !$can_read_post ) {
     $bypass = false;
   }
 
@@ -252,31 +249,111 @@ function array_flatten($array) {
 
 }
 
-// Featured articles pagination
-add_action( 'wp_ajax_nopriv_ajax_pagination', 'ajax_pagination' );
-add_action( 'wp_ajax_ajax_pagination', 'ajax_pagination' );
+function post_like_table_create() {
 
-function ajax_pagination() {
-  $args = array(
-    'tag_id' => 45,
-    'post_status' => array(
-      'publish'
-    ),
-    'posts_per_page' => 4,
-    'order' => 'ASC',
-    'orderby' => 'date',
-    'post_type' => 'post',
-    'paged' => intval( $_POST['paged'] ),
-  );
+global $wpdb;
+$table_name = $wpdb->prefix. "post_like_table";
+global $charset_collate;
+$charset_collate = $wpdb->get_charset_collate();
+global $db_version;
 
-  $posts = new WP_Query( $args );
+if( $wpdb->get_var("SHOW TABLES LIKE '" . $table_name . "'") != $table_name) {
+  $create_sql = "CREATE TABLE " . $table_name . " (
+  id INT(11) NOT NULL auto_increment,
+  postid INT(11) NOT NULL ,
 
-  if ( $posts->have_posts() ) {
-    while ( $posts->have_posts() ) {
-      $posts->the_post();
-      get_template_part( 'template-parts/content', 'featured' );
-    }
+  clientip VARCHAR(40) NOT NULL ,
+
+  PRIMARY KEY (id))$charset_collate;";
+  require_once(ABSPATH . "wp-admin/includes/upgrade.php");
+  dbDelta( $create_sql );
+}
+
+if (!isset($wpdb->post_like_table)) {
+  $wpdb->post_like_table = $table_name;
+  //add the shortcut so you can use $wpdb->stats
+  $wpdb->tables[] = str_replace($wpdb->prefix, '', $table_name);
+}
+
+}
+add_action( 'init', 'post_like_table_create');
+
+function get_client_ip() {
+  $ip = $_SERVER['REMOTE_ADDR'];
+
+  return $ip;
+}
+
+function my_action_callback() {
+  check_ajax_referer( 'my-special-string', 'security' );
+  $postid = intval( $_POST['postid'] );
+  $clientip = get_client_ip();
+  $like = 0;
+  $dislike = 0;
+  $like_count = 0;
+
+  global $wpdb;
+  $row = $wpdb->get_results( "SELECT id FROM $wpdb->post_like_table WHERE postid = '$postid' AND clientip = '$clientip'");
+
+  if( empty( $row ) ){
+    $wpdb->insert( $wpdb->post_like_table, array( 'postid' => $postid, 'clientip' => $clientip ), array( '%d', '%s' ) );
+    $like = 1;
   }
 
-  die();
+  if( ! empty( $row ) ){
+    //delete row
+    $wpdb->delete( $wpdb->post_like_table, array( 'postid' => $postid, 'clientip'=> $clientip ), array( '%d','%s' ) );
+    $dislike = 1;
+  }
+
+  //calculate like count from db.
+  $totalrow = $wpdb->get_results( "SELECT id FROM $wpdb->post_like_table WHERE postid = '$postid'");
+  $total_like = $wpdb->num_rows;
+  $data = array( 'postid'=>$postid,'likecount'=>$total_like,'clientip'=>$clientip,'like'=>$like,'dislike'=>$dislike);
+  echo json_encode($data);
+  //echo $clientip;
+  die(); // this is required to return a proper result
 }
+
+add_action( 'wp_ajax_my_action', 'my_action_callback' );
+add_action( 'wp_ajax_nopriv_my_action', 'my_action_callback' );
+
+// Download resource file and save to database
+function download_resource(){
+  $attachment_id = $_GET['attachment_id'];
+  $file = wp_get_attachment_url( $attachment_id );
+
+  if( !$file ) {
+    return;
+  }
+
+  $file_url  = stripslashes( trim( $file ) );
+  $file_name = basename( $file );
+  $file_mime_type = get_post_mime_type( $attachment_id );
+
+  if(strpos( $file_url , '.php' ) == true) {
+	  die("Invalid file!");
+  }
+
+  global $current_user;
+
+  get_currentuserinfo();
+
+  $resource_download_history = get_user_meta( $current_user->ID, 'resource_download_history', true) ?: array();
+  $resource_download_history[intval( $_GET['resource_id'] )] = true;
+
+  update_user_meta( $current_user->ID, 'resource_download_history', $resource_download_history );
+
+  header("Expires: 0");
+  header("Cache-Control: no-cache, no-store, must-revalidate");
+  header('Cache-Control: pre-check=0, post-check=0, max-age=0', false);
+  header("Pragma: no-cache");
+  header("Content-type: {$file_mime_type}");
+  header("Content-Disposition:attachment; filename={$file_name}");
+  header("Content-Type: application/force-download");
+
+  readfile("{$file_url}");
+  exit();
+}
+
+add_filter( 'init', 'download_resource' );

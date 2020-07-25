@@ -269,4 +269,3 @@ if ( $current_user ) {
     </form>
   </div>
 </div>
-<?php do_action( 'woocommerce_after_edit_account_form' ); ?>

@@ -1,5 +1,47 @@
 $ = jQuery;
 
+function customCarousel(carousel, options) {
+  var $element = $('.' + carousel + '-carousel');
+
+  $('#' + carousel + '-prev').addClass('disabled');
+
+  $element.owlCarousel({
+    items: options.items,
+    dots: false,
+    slideBy: options.items,
+  });
+
+  $('#' + carousel + '-prev').on('click', function(event) {
+    event.preventDefault();
+
+    $element.trigger('prev.owl.carousel');
+
+    var isFirst = !!$element.find('.owl-item').first().hasClass('active');
+
+    if (isFirst) {
+      $(this).addClass('disabled');
+    } else {
+      $(this).removeClass('disabled');
+      $(this).next().removeClass('disabled');
+    }
+  });
+
+  $('#' + carousel + '-next').on('click', function(event) {
+    event.preventDefault();
+
+    $element.trigger('next.owl.carousel');
+
+    var isLast = !!$element.find('.owl-item').last().hasClass('active');
+
+    if (isLast) {
+      $(this).addClass('disabled');
+    } else {
+      $(this).removeClass('disabled');
+      $(this).prev().removeClass('disabled');
+    }
+  });
+}
+
 function readURL(input, imageSelector) {
   if (input.files && input.files[0]) {
     var reader = new FileReader();
@@ -84,25 +126,6 @@ $(document).ready(function(){
   });
 
   // Featured articles pagination
-  var featuredPagination = $('.featured-articles-row');
-
-  featuredPagination.owlCarousel({
-    items: 4,
-    slideBy: 4,
-    slideTransition: '',
-    dots: false,
-  });
-
-  $('#featured-prev').on('click', function(event) {
-      event.preventDefault();
-
-      featuredPagination.trigger('prev.owl.carousel');
-  });
-
-  $('#featured-next').on('click', function(event) {
-      event.preventDefault();
-
-      featuredPagination.trigger('next.owl.carousel');
-  });
+  customCarousel('featured', { items: 4 });
 
 });

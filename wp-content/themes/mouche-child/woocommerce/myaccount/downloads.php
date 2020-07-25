@@ -22,53 +22,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// TODO: Change has downloads function
+global $current_user;
 
-$has_downloads = true; ?>
+get_currentuserinfo();
+
+$resource_download_history = get_user_meta( $current_user->ID, 'resource_download_history', true) ?: array();
+$has_downloads = sizeof( $resource_download_history ) > 0;
+
+?>
 
 <?php if ( $has_downloads ) : ?>
 
 <div class="container widt-850">
-  <div class="row justify-content-between align-items-center myaccount-downloads-row gutter-40">
-    <div class="col">
-      <h3 class="medium">Why HR Technology Matters Now More Than Ever</h3>
-    </div>
-    <div class="col-auto">
-      <a href="#" class="btn medium primary">DOWNLOAD <i class="icon-download m-l-10"></i></a>
-    </div>
-  </div>
-  <div class="row justify-content-between align-items-center myaccount-downloads-row gutter-40">
-    <div class="col">
-      <h3 class="medium">Guide to Talent Acquisition for the Future</h3>
-    </div>
-    <div class="col-auto">
-      <a href="#" class="btn medium primary">DOWNLOAD <i class="icon-download m-l-10"></i></a>
-    </div>
-  </div>
-  <div class="row justify-content-between align-items-center myaccount-downloads-row gutter-40">
-    <div class="col">
-      <h3 class="medium">HR Technology for 2020 Slideset</h3>
-    </div>
-    <div class="col-auto">
-      <a href="#" class="btn medium primary">DOWNLOAD <i class="icon-download m-l-10"></i></a>
-    </div>
-  </div>
-  <div class="row justify-content-between align-items-center myaccount-downloads-row gutter-40">
-    <div class="col">
-      <h3 class="medium">HRPS Research on The New Workforce</h3>
-    </div>
-    <div class="col-auto">
-      <a href="#" class="btn medium primary">DOWNLOAD <i class="icon-download m-l-10"></i></a>
-    </div>
-  </div>
-  <div class="row justify-content-between align-items-center myaccount-downloads-row gutter-40">
-    <div class="col">
-      <h3 class="medium">Thriving In The Pandemic: Lessons From The World Happiness Study</h3>
-    </div>
-    <div class="col-auto">
-      <a href="#" class="btn medium primary">DOWNLOAD <i class="icon-download m-l-10"></i></a>
-    </div>
-  </div>
+		<?php foreach ( $resource_download_history as $resource_id => $value ): ?>
+			
+			<div class="row justify-content-between align-items-center myaccount-downloads-row gutter-40">
+				<div class="col">
+		      <h3 class="medium"><?php echo get_the_title( $resource_id ); ?></h3>
+		    </div>
+		    <div class="col-auto">
+					<?php
+
+					$resource = get_field('resource', $resource_id );
+
+					if ( $resource ):
+						$resource = get_permalink( $resource['ID'] ) . '?attachment_id=' . $resource['ID'] . '&resource_id=' . $resource_id . '&download_file=1';
+					endif;
+					?>
+		      <a href="<?php echo $resource; ?>" class="btn medium primary">DOWNLOAD <i class="icon-download m-l-10"></i></a>
+	    </div>
+		</div>
+	<?php endforeach; ?>
 </div>
 
 <?php else : ?>

@@ -4,6 +4,8 @@ $navigation = get_field('navigation', 'options') ?: null;
 $footer = get_field('footer', 'options') ?: null;
 
 get_header( $navigation );
+
+$as_published_in = get_field( 'as_published_in' );
 ?>
 
 <section class="header-top-padding-normal header-bottom-padding-normal bg-secondary">
@@ -27,6 +29,11 @@ get_header( $navigation );
       <div class="container width-1050">
         <div class="row gutter-30">
           <div class="flex-72">
+            <?php if ( $as_published_in ): ?>
+              <div class="type-bold font-12 caps m-b-50 row">
+                <span class="m-r-5">as published in </span> <span><?php echo $as_published_in; ?></span>
+              </div>
+            <?php endif; ?>
             <article id="post-article">
               <?php the_content(); ?>
             </article>
