@@ -1,0 +1,14 @@
+2020-07-27T09:18:25+00:00 CRITICAL Cannot redeclare register_sidebar() (previously declared in /Applications/MAMP/htdocs/joshbersin/wp-includes/widgets.php:247) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 411
+
+2020-07-27T09:18:38+00:00 CRITICAL Cannot redeclare register_sidebars() (previously declared in /Applications/MAMP/htdocs/joshbersin/wp-includes/widgets.php:166) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 411
+
+2020-07-27T09:18:48+00:00 CRITICAL Cannot redeclare register_sidebars() (previously declared in /Applications/MAMP/htdocs/joshbersin/wp-includes/widgets.php:166) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 411
+
+2020-07-27T09:43:17+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Term as array in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/category.php:20
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/template-loader.php(106): include()
+#1 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(19): require_once('/Applications/M...')
+#2 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#3 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/category.php on line 20
+

@@ -1,0 +1,28 @@
+2020-07-26T11:04:13+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function time_ago(), 1 passed in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php on line 136 and exactly 2 expected in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:199
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php(136): time_ago(209)
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/template-loader.php(106): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(19): require_once('/Applications/M...')
+#3 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#4 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 199
+
+2020-07-26T11:04:30+00:00 CRITICAL Uncaught Exception: DateTime::__construct(): Failed to parse time string (209) at position 0 (2): Unexpected character in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:202
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php(202): DateTime->__construct('209')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php(136): time_ago(false, 209)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/template-loader.php(106): include('/Applications/M...')
+#3 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(19): require_once('/Applications/M...')
+#4 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 202
+
+2020-07-26T11:05:22+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function time_ago(), 1 passed in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php on line 136 and exactly 2 expected in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:199
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/page-home.php(136): time_ago('7:33 am')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/template-loader.php(106): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(19): require_once('/Applications/M...')
+#3 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#4 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 199
+

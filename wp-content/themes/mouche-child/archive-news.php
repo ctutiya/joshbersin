@@ -10,7 +10,7 @@ $big = 999999999;
 <section class="header-top-padding-normal header-bottom-padding-normal bg-secondary">
   <div class="container width-950 align-center p-t-15 p-b-15">
     <h1 class="large m-b-15">News</h1>
-    <p class="m-b-25">Check this page for the latest news releases and articles related to Josh Bersin's work and the Josh Bersin Academy.  For press-related queries, please contact Linda Galloway at <a href="mailto:linda@bersinpartners.com" class="type-bold">linda@bersinpartners.com</a>.</p>
+    <p class="m-b-25 color-tertiary">Check this page for the latest news releases and articles related to Josh Bersin's work and the Josh Bersin Academy.  For press-related queries, please contact Linda Galloway at <a href="mailto:linda@bersinpartners.com" class="type-bold">linda@bersinpartners.com</a>.</p>
     <a href="#" onclick="history.back();">
       <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/arrow-primary.svg" alt="Go back">
     </a>
@@ -60,14 +60,9 @@ $big = 999999999;
         </div>
       </div>
       <div class="col">
-        <div class="widget">
-          <div class="align-center">
-            <div class="p-25">
-              <p class="type-bold color-tertiary m-b-30 font-14">Join the only global professional development academy for HR</p>
-              <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/josh-bersin-academy.png" alt="Josh Bersin Academy">
-            </div>
-            <a href="#" class="p-t-10 p-b-10 p-l-25 p-r-25 border-top block type-bold caps font-14 color-dark">Learn More</a>
-          </div>
+        <?php get_search_form(); ?>
+        <div class="m-t-40 block-bottom-padding-large">
+          <?php dynamic_sidebar('inner'); ?>
         </div>
       </div>
     </div>

@@ -68,7 +68,7 @@ if ( $current_user ) {
 				<div class="col-auto">
 					<div class="row no-gutters align-items-center sign-in-button">
 						<img class="m-r-10" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/man.svg" alt="Sign in">
-						<a class="font-14 type-bold subtitle m-r-35" href="#">Sign In</a>
+						<a class="font-14 type-bold subtitle m-r-35" href="<?php echo home_url('my-account') ?>">Sign In</a>
 						<div class="absolute sign-in-dropdown p-t-20 p-b-20 p-l-15 p-r-15">
 							<div class="row justify-content-between align-items-center p-b-15 border-bottom m-b-20">
 								<div class="col-auto">
@@ -82,18 +82,46 @@ if ( $current_user ) {
 						  	<?php do_action( 'woocommerce_login_form_start' ); ?>
 								<label class="block m-b-20">
 									<div class="type-bold font-14">Email*</div>
-									<input placeholder="Email" id="login-email" type="text" class="m-t-10 woocommerce-Input woocommerce-Input--text input-text full-width" name="username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+									<input placeholder="Email" autocomplete="off" id="login-email" type="text" class="m-t-10 woocommerce-Input woocommerce-Input--text input-text full-width" name="username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
 						    </label>
-								<label class="block m-b-15">
+								<label class="block">
 									<div class="type-bold font-14">Password*</div>
-									<input class="full-width" type="password" name="password" value="" placeholder="Password">
+									<input class="full-width" autocomplete="off" type="password" name="password" value="" placeholder="Password">
 								</label>
+								<div class="row no-gutters justify-content-end">
+									<a class="m-t-10 block font-14 type-regular m-b-10" href="<?php echo esc_url( wp_lostpassword_url() ); ?>">
+							      Lost your password?
+							    </a>
+								</div>
 								<?php do_action( 'woocommerce_login_form' ); ?>
 								<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-						  	<button id="sign-in-btn" type="submit" class="btn primary align-items-center full-width large woocommerce-button button woocommerce-form-login__submit justify-content-center" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>"><?php esc_html_e( 'Sign in', 'woocommerce' ); ?></button>
-								<a class="m-t-15 block font-14 type-regular" href="<?php echo esc_url( wp_lostpassword_url() ); ?>">
-						      Lost your password?
-						    </a>
+						  	<button id="sign-in-btn" type="submit" class="m-b-20 btn primary align-items-center full-width large woocommerce-button button woocommerce-form-login__submit justify-content-center" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>"><?php esc_html_e( 'Sign in', 'woocommerce' ); ?></button>
+								<div class="row gutter-10 align-items-center m-b-20 justify-content-center">
+									<div class="col">
+										<div class="horizontal-line"></div>
+									</div>
+									<p class="font-13 col-auto">or continue with</p>
+									<div class="col">
+										<div class="horizontal-line"></div>
+									</div>
+								</div>
+								<div class="row gutter-20 justify-content-center">
+									<div class="col-auto">
+										<div class="border  height-30 social-login-icon">
+											<img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/facebook.png" alt="Login with facebook">
+										</div>
+									</div>
+									<div class="col-auto">
+										<div class="border  height-30 social-login-icon">
+											<img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/twitter.png" alt="Login with twitter">
+										</div>
+									</div>
+									<div class="col-auto">
+										<div class="border  height-30 social-login-icon">
+											<img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/google.png" alt="Login with google">
+										</div>
+									</div>
+								</div>
 						  </form>
 						</div>
 					</div>
@@ -101,7 +129,7 @@ if ( $current_user ) {
 				<div class="col-auto">
 					<div class="row no-gutters align-items-center register-button">
 						<img class="m-r-10" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/mail.svg" alt="Register">
-						<a class="font-14 type-bold subtitle" href="#">Register</a>
+						<a class="font-14 type-bold subtitle" href="<?php echo home_url('/my-account') ?>?register">Register</a>
 					</div>
 				</div>
 
@@ -115,10 +143,10 @@ if ( $current_user ) {
 									<a class="font-14 type-bold subtitle no-caps" href="#"><?php echo $user_meta['first_name'][0] . ' ' . $user_meta['last_name'][0]; ?></a>
 									<ul class="sub-menu">
 										<li class="menu-item">
-											<a href="<?php echo home_url('/my-account'); ?>">MY ACCOUNT</a>
+											<a href="<?php echo home_url('/my-account'); ?>" class="type-bold">MY ACCOUNT</a>
 										</li>
 										<li class="menu-item">
-											<a href="<?php echo wc_logout_url(); ?>">LOG OUT</a>
+											<a href="<?php echo wc_logout_url(); ?>" class="type-bold">LOG OUT</a>
 										</li>
 									</ul>
 								</li>

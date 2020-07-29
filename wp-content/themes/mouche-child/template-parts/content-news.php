@@ -1,5 +1,5 @@
-<div class="block-top-padding-normal block-bottom-padding-normal news-item">
-  <a href="<?php the_permalink(); ?>" class="color-dark">
+<div class="p-t-40 p-b-40 news-item">
+  <a href="<?php the_permalink(); ?>" class="color-black">
     <h2 class="small m-b-20"><?php the_title(); ?></h2>
   </a>
   <div class="color-black font-16 m-b-20"><?php the_excerpt(); ?></div>

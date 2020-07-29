@@ -2,7 +2,7 @@
 /*
  * Plugin Name: wpDiscuz
  * Description: #1 WordPress Comment Plugin. Innovative, modern and feature-rich comment system to supercharge your website comment section.
- * Version: 7.0.4
+ * Version: 7.0.5
  * Author: gVectors Team
  * Author URI: https://gvectors.com/
  * Plugin URI: https://wpdiscuz.com/
@@ -1654,7 +1654,12 @@ class WpdiscuzCore implements WpDiscuzConstants {
         $postId = isset($_POST["postId"]) ? intval($_POST["postId"]) : 0;
         if ($postId) {
             $this->isWpdiscuzLoaded = true;
-            $parentCommentIds = $this->dbManager->getParentCommentsHavingReplies($postId);
+            $this->commentsArgs = $this->getDefaultCommentsArgs($postId);
+            $commentStatusIn = ["1"];
+            if ($this->commentsArgs["status"] === "all") {
+                $commentStatusIn[] = "0";
+            }
+            $parentCommentIds = $this->dbManager->getParentCommentsHavingReplies($postId, $commentStatusIn);
             $childCount = 0;
             $hottestCommentId = 0;
             $hottestChildren = [];
@@ -1670,11 +1675,6 @@ class WpdiscuzCore implements WpDiscuzConstants {
             }
 
             if ($hottestCommentId && $hottestChildren) {
-                $this->commentsArgs = $this->getDefaultCommentsArgs($postId);
-                $commentStatusIn = ["1"];
-                if ($this->commentsArgs["status"] === "all") {
-                    $commentStatusIn[] = "0";
-                }
                 $args = [
                     "format" => "flat",
                     "status" => $this->commentsArgs["status"],

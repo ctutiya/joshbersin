@@ -188,8 +188,13 @@ class WpdiscuzDBManager implements WpDiscuzConstants {
         return $this->db->get_col($sql);
     }
 
-    public function getParentCommentsHavingReplies($postId) {
-        $sql = $this->db->prepare("SELECT `c1`.`comment_ID` FROM `{$this->db->comments}` AS `c1` INNER JOIN  `{$this->db->comments}` AS `c2` ON `c1`.`comment_post_ID` = `c2`.`comment_post_ID` AND `c2`.`comment_parent` = `c1`.`comment_ID` WHERE `c1`.`comment_post_ID` = %d AND `c1`.`comment_parent` = 0 GROUP BY `c1`.`comment_ID` ORDER BY `c1`.`comment_ID` DESC;", $postId);
+    public function getParentCommentsHavingReplies($postId, $commentStatusIn) {
+        if (count($commentStatusIn) === 1) {
+            $approved = " AND `c1`.`comment_approved` = '1' AND `c2`.`comment_approved` = '1'";
+        } else {
+            $approved = " AND `c1`.`comment_approved` IN('1','0') AND `c2`.`comment_approved` IN('1','0')";
+        }
+        $sql = $this->db->prepare("SELECT `c1`.`comment_ID` FROM `{$this->db->comments}` AS `c1` INNER JOIN  `{$this->db->comments}` AS `c2` ON `c1`.`comment_post_ID` = `c2`.`comment_post_ID` AND `c2`.`comment_parent` = `c1`.`comment_ID` WHERE `c1`.`comment_post_ID` = %d AND `c1`.`comment_parent` = 0$approved GROUP BY `c1`.`comment_ID` ORDER BY `c1`.`comment_ID` DESC;", $postId);
         $data = $this->db->get_col($sql);
         return $data;
     }

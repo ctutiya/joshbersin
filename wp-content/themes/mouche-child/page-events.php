@@ -12,7 +12,7 @@ get_header( $navigation );
 <section class="header-top-padding-normal header-bottom-padding-normal bg-secondary color-tertiary">
   <div class="container width-950 align-center p-t-15 p-b-15">
     <h1 class="large m-b-15">Events</h1>
-    <p class="m-b-25">Check this page for upcoming presentations and events related to Josh Bersin and the Josh Bersin Academy.  For speaking inquiries, contact <a href="mailto:lindagalloway@bersinpartners.com" class="type-bold">lindagalloway@bersinpartners.com</a>.</p>
+    <p class="m-b-20 color-tertiary">Check this page for upcoming presentations and events related to Josh Bersin and the Josh Bersin Academy.  For speaking inquiries, contact <a href="mailto:lindagalloway@bersinpartners.com" class="type-bold">lindagalloway@bersinpartners.com</a>.</p>
     <a href="#" onclick="history.back();">
       <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/arrow-primary.svg" alt="Go back">
     </a>
@@ -39,7 +39,7 @@ $webinars = get_posts( $args );
   <div class="container">
     <div class="row justify-content-between align-items-end p-b-25 border-bottom m-b-25">
       <div>
-        <p class="type-bold font-32 letter-spacing m-b-10">Webinars</p>
+        <p class="type-bold font-32 letter-spacing m-b-5">Webinars</p>
         <p>Register to join an upcoming virtual event.</p>
       </div>
       <div class="row no-gutters">
@@ -126,8 +126,8 @@ $webinars = get_posts( $args );
           <img class="m-b-15" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/quotes.svg" alt="Quotes">
           <div class="owl-carousel owl-theme events-testimonials">
             <div>
-              <h2 class="medium m-b-15">Exceptional materials. The most durable glass ever in a smartphone. A beautiful new gold finish, achieved lorem ipsum placeholder text here. </h2>
-              <div class="m-b-50 font-16">
+              <h2 class="medium m-b-15 color-tertiary">Exceptional materials. The most durable glass ever in a smartphone. A beautiful new gold finish, achieved lorem ipsum placeholder text here. </h2>
+              <div class="m-b-50 font-16 color-tertiary">
                 Richard Davidson,<br>Project Manager at Skyscanner
               </div>
             </div>
@@ -170,7 +170,7 @@ $conferences = get_posts( $args );
   <div class="container">
     <div class="row justify-content-between align-items-end p-b-25 border-bottom m-b-25">
       <div>
-        <p class="type-bold font-32 letter-spacing m-b-10">Conferences & Seminars</p>
+        <p class="type-bold font-32 letter-spacing m-b-5">Conferences & Seminars</p>
         <p>Hear Josh Bersin in person.</p>
       </div>
       <div class="row no-gutters">

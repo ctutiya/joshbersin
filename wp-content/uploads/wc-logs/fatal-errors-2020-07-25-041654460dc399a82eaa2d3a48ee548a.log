@@ -89,3 +89,23 @@ Stack trace:
 
 2020-07-25T10:23:01+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/downloads.php on line 52
 
+2020-07-25T15:49:58+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_current_user_profile_picture(), 0 passed in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/form-edit-account.php on line 43 and exactly 3 expected in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:160
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/form-edit-account.php(43): get_current_user_profile_picture()
+#1 /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/wc-core-functions.php(251): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php(160): wc_get_template('myaccount/form-...', Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/wc-template-functions.php(3141): WC_Shortcode_My_Account::edit_account()
+#4 /Applications/MAMP/htdocs/joshbersin/wp-incl in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 160
+
+2020-07-25T17:38:40+00:00 CRITICAL syntax error, unexpected '=' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 359
+
+2020-07-25T17:38:45+00:00 CRITICAL syntax error, unexpected '=' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 359
+
+2020-07-25T17:38:54+00:00 CRITICAL syntax error, unexpected '=' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 359
+
+2020-07-25T17:39:01+00:00 CRITICAL syntax error, unexpected '=' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 359
+
+2020-07-25T17:39:14+00:00 CRITICAL syntax error, unexpected '=' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 359
+
+2020-07-25T17:39:20+00:00 CRITICAL syntax error, unexpected '=' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 359
+

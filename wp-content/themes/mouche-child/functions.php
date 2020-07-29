@@ -157,23 +157,14 @@ function update_account() {
 add_action( 'admin_post_update_account', 'update_account' );
 
 // Get profile picture source
-function get_current_user_profile_picture() {
-  global $current_user;
+function get_current_user_profile_picture( $url, $id_or_email, $args ) {
+  $profile_picture = get_stylesheet_directory_uri() . '/images/icon/user.svg';
 
-  get_currentuserinfo();
+  $profile_picture_base64 = get_user_meta( $id_or_email, 'profile_picture_base64' );
 
-  $profile_picture = get_stylesheet_directory() . '/images/icon/user.svg';
-
-  if ( $current_user ) {
-    $user_id = $current_user->ID;
-
-    $profile_picture_base64 = get_user_meta( $user_id, 'profile_picture_base64' );
-
-    if ( $profile_picture_base64[0] ) {
-      $profile_picture = 'data:image/png;base64, ' . $profile_picture_base64[0];
-    }
+  if ( $profile_picture_base64[0] ) {
+    $profile_picture = 'data:image/png;base64, ' . $profile_picture_base64[0];
   }
-
 
   return $profile_picture;
 }
@@ -205,37 +196,10 @@ function set_post_views($postID) {
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
 // Get how much time past since post was published
-function time_ago( $full = false ) {
-  $datetime = get_the_time();
-  $now = new DateTime;
-  $ago = new DateTime($datetime);
-  $diff = $now->diff($ago);
-  $diff->w = floor($diff->d / 7);
-  $diff->d -= $diff->w * 7;
+function time_ago() {
+  $time_ago = human_time_diff( get_the_time('U') );
 
-  $string = array(
-     'y' => 'year',
-     'm' => 'month',
-     'w' => 'week',
-     'd' => 'day',
-     'h' => 'hour',
-     'i' => 'minute',
-     's' => 'second',
-  );
-
-  foreach ($string as $k => &$v) {
-     if ($diff->$k) {
-         $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
-     } else {
-         unset($string[$k]);
-     }
-  }
-
-  if (!$full) {
-    $string = array_slice($string, 0, 1);
-  }
-
-  return $string ? implode(', ', $string) . ' ago' : 'just now';
+  return $time_ago . ' ago';
 }
 
 function array_flatten($array) {
@@ -357,3 +321,120 @@ function download_resource(){
 }
 
 add_filter( 'init', 'download_resource' );
+
+add_filter( 'get_avatar_url', 'get_current_user_profile_picture', 999, 3 );
+
+function filter_get_avatar( $avatar, $id_or_email, $size, $default, $alt, $args ) {
+  $profile_picture = get_stylesheet_directory_uri() . '/images/icon/user.svg';
+
+  $profile_picture_base64 = get_user_meta( $id_or_email, 'profile_picture_base64' );
+
+  if ( $profile_picture_base64[0] ) {
+    $profile_picture = 'data:image/png;base64, ' . $profile_picture_base64[0];
+  }
+
+  $profile_picture = '<img src="' . $profile_picture . '" alt="Avatar">';
+
+  return $profile_picture;
+}
+
+add_filter( 'get_avatar', 'filter_get_avatar', 999, 6 );
+
+// Events widget shortcode
+function events_widget( $args ) {
+  $output = '<div class="align-center p-t-20 p-b-20 p-l-25 p-r-25 border-bottom letter-spacing type-bold caps font-14 color-tertiary">Upcoming events</div>';
+  $output .= '<div class="p-l-25 p-r-25">';
+
+  $args = array(
+      'post_status' => array(
+        'future'
+      ),
+      'post_type' => array( 'webinars', 'conferences' ),
+      'posts_per_page' => 3,
+      'order' => 'ASC',
+      'orderby' => 'date',
+  );
+
+  $events = new WP_Query( $args );
+
+  if ( $events->have_posts() ) {
+    while ( $events->have_posts() ) {
+        $events->the_post();
+        $promo_code = get_field( 'coupon_code', get_the_ID() );
+        $link_to_event_page = get_field( 'link_to_event_page', get_the_ID() );
+
+        $output .= '<div class="p-t-15 row gutter-20">';
+        $output .= '<div class="col-auto align-center color-primary">';
+        $output .= '<p class="font-30 type-bold">' . get_the_time('d') . '</p>';
+        $output .= '<p class="font-12">' . get_the_time('M') . '</p>';
+        $output .= '</div>';
+        $output .= '<div class="col">';
+        $output .= '<p class="font-14 type-bold m-b-5">';
+        $output .= '<a href="' . $link_to_event_page . '" target="_blank" class="color-dark">' . get_the_title() . '</a>';
+        $output .= '</p>';
+
+        $date_EST = new DateTime( get_the_time(), new DateTimeZone('UTC') );
+        $date_EST->setTimezone( new DateTimeZone('EST') );
+
+        $output .= '<p class="subtitle font-12 m-b-5">' . $date_EST->format( 'h:iA') . ' EST' . '</p>';
+
+        if ( $promo_code ):
+          $output .= '<p class="subtitle font-12 m-b-5">Promo Code: ' . $promo_code . '</p>';
+        endif;
+
+        $output .= '<a href="' . $link_to_event_page . '" class="font-12 row no-gutters align-items-center" target="_blank" >Learn More <i class="icon-arrow_right_alt m-l-5 font-20"></i></a>';
+        $output .= '</div>';
+        $output .= '</div>';
+    }
+  }
+
+  wp_reset_postdata();
+
+  $output .= '</div>';
+  $output .= '<a href="' . home_url('events') . '" class="block align-center m-t-15 p-t-15 p-b-20 p-l-25 p-r-25 border-top letter-spacing type-bold caps font-14 color-tertiary">View more</a>';
+
+  return $output;
+}
+add_shortcode( 'events', 'events_widget' );
+
+// Register Sidebars
+function inner_sidebars() {
+  register_sidebar( array(
+      'name'          => __( 'Inner pages sidebar', 'textdomain' ),
+      'id'            => 'inner',
+      'description'   => __( 'Widgets in this area will be shown on inner pages.', 'textdomain' ),
+      'before_widget' => '<div id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<p class="widgettitle m-b-30 font-18 type-medium">',
+      'after_title'   => '</p>',
+  ) );
+}
+add_action( 'widgets_init', 'inner_sidebars' );
+
+// Events widget shortcode
+function academy_widget( $args ) {
+$output = '<a href="https://bersinacademy.com/" target="_blank" class="align-center academy-widget">';
+$output .= '<div class="p-25">';
+$output .= '<p class="type-bold color-tertiary m-b-30 font-14">Join the only global professional development academy for HR</p>';
+$output .= '<img src="' . get_stylesheet_directory_uri() . '/images/josh-bersin-academy.png" alt="Josh Bersin Academy">';
+$output .= '</div>';
+$output .= '<div class="p-t-10 p-b-10 p-l-25 p-r-25 border-top block type-bold caps font-14 color-tertiary learn-more-button">Learn More</div>';
+$output .= '</a>';
+
+  return $output;
+}
+add_shortcode( 'academy', 'academy_widget' );
+
+function custom_search_form( $form ) {
+   $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+   <div>
+     <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="Search" class="full-width block">
+     <button type="submit" id="searchsubmit">
+       <i class="icon-search font-18"></i>
+     </button>
+    </div>
+   </form>';
+
+   return $form;
+}
+add_filter( 'get_search_form', 'custom_search_form' );

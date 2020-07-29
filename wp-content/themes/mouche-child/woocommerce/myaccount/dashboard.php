@@ -29,7 +29,7 @@ $allowed_html = array(
 );
 ?>
 
-<p class="m-b-35">
+<p class="m-b-35 color-tertiary">
 	<?php
 	printf(
 		/* translators: 1: user display name 2: logout url */
@@ -40,7 +40,7 @@ $allowed_html = array(
 	?>
 </p>
 
-<p>
+<p class="color-tertiary">
 	<?php
 	/* translators: 1: Orders URL 2: Address URL 3: Account URL. */
 	$dashboard_desc = __( 'From your account dashboard you can view your <a href="%1$s">recent downloads</a> and <a href="%2$s">edit your password and account details</a>.', 'woocommerce' );

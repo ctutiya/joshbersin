@@ -9,14 +9,14 @@ $as_published_in = get_field( 'as_published_in' );
 ?>
 
 <section class="header-top-padding-normal header-bottom-padding-normal bg-secondary">
-  <div class="container align-center width-950 p-t-10 p-b-10">
+  <div class="container align-center width-950">
     <p class="type-bold font-12 letter-spacing caps color-primary m-b-30">
       <a href="<?php echo home_url('news'); ?>">News</a>
     </p>
-    <h1 class="medium m-b-30"><?php the_title(); ?></h1>
+    <h1 class="medium m-b-25"><?php the_title(); ?></h1>
     <div class="row gutter-5 align-items-center justify-content-center">
       <img class="col-auto" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/clock.svg" alt="Publish date">
-      <span class="col-auto"><?php the_time('M j, Y'); ?>.</span>
+      <span class="col-auto color-tertiary font-12"><?php the_time('M j, Y'); ?>.</span>
     </div>
   </div>
 </section>
@@ -26,9 +26,10 @@ $as_published_in = get_field( 'as_published_in' );
     <?php while ( have_posts() ): ?>
       <?php the_post(); ?>
 
-      <div class="container width-1050">
+      <div class="container">
         <div class="row gutter-30">
-          <div class="flex-72">
+          <div class="flex-9"></div>
+          <div class="flex-66">
             <?php if ( $as_published_in ): ?>
               <div class="type-bold font-12 caps m-b-50 row">
                 <span class="m-r-5">as published in </span> <span><?php echo $as_published_in; ?></span>
@@ -39,7 +40,10 @@ $as_published_in = get_field( 'as_published_in' );
             </article>
           </div>
           <div class="col">
-
+            <?php get_search_form(); ?>
+            <div class="m-t-40 block-bottom-padding-large">
+              <?php dynamic_sidebar('inner'); ?>
+            </div>
           </div>
         </div>
       </div>

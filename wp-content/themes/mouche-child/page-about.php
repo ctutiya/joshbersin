@@ -10,9 +10,9 @@ get_header( $navigation );
 ?>
 
 <section class="header-top-padding-normal header-bottom-padding-normal bg-secondary">
-  <div class="container width-950 align-center">
+  <div class="container width-950 align-center m-t-35 m-b-30">
     <h1 class="large m-b-15">Josh Bersin</h1>
-    <p class="m-b-25">Global Industry Analyst and Dean, Josh Bersin Academy</p>
+    <p class="m-b-20 color-tertiary font-24">Global Industry Analyst and Dean, Josh Bersin Academy</p>
     <a href="#" onclick="history.back();">
       <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/arrow-primary.svg" alt="Go back">
     </a>

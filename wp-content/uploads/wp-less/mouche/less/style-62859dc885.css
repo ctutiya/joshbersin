@@ -1296,6 +1296,18 @@ html {
   align-self: stretch !important;
 }
 @media (min-width: 481px) {
+  .flex-8 {
+    flex: 0 0 8%;
+    max-width: 8%;
+  }
+}
+@media (min-width: 481px) {
+  .flex-9 {
+    flex: 0 0 9%;
+    max-width: 9%;
+  }
+}
+@media (min-width: 481px) {
   .flex-10 {
     flex: 0 0 10%;
     max-width: 10%;
@@ -2808,6 +2820,12 @@ body {
 .type-bold {
   font-weight: 700 !important;
 }
+.type-extra {
+  font-weight: 800 !important;
+}
+.type-black {
+  font-weight: 900 !important;
+}
 .caps {
   text-transform: uppercase;
 }
@@ -2964,6 +2982,9 @@ a.text-white.subtitle {
 }
 .color-dark {
   color: #262d33;
+}
+.color-black {
+  color: black;
 }
 .align-right {
   text-align: right;
@@ -6455,17 +6476,23 @@ a:not([class*="text-"]):not([class*="color-"]):not(.btn):not(.tab):hover,
 a:not([class*="text-"]):not([class*="color-"]):not(.btn):not(.tab):active {
   color: #222222;
 }
+a.color-white,
 a.text-white {
   color: #ffffff;
 }
+a.color-white:hover,
 a.text-white:hover,
+a.color-white:active,
 a.text-white:active {
   color: #20aadb !important;
 }
+a.color-black,
 a.text-black {
   color: black;
 }
+a.color-black:hover,
 a.text-black:hover,
+a.color-black:active,
 a.text-black:active {
   color: #20aadb !important;
 }
@@ -16038,6 +16065,9 @@ footer .menu-item a {
   position: relative;
   z-index: 100;
 }
+.logged-in [class*="navigation_"] {
+  top: 32px;
+}
 .image-circle {
   object-fit: cover;
   border-radius: 50%;
@@ -17242,7 +17272,7 @@ body.compensate-for-scrollbar {
   border-radius: 4px;
 }
 .select2-container--default .select2-selection--single .select2-selection__rendered {
-  color: #444;
+  color: #4B5157;
   line-height: 28px;
 }
 .select2-container--default .select2-selection--single .select2-selection__clear {
@@ -17439,7 +17469,7 @@ body.compensate-for-scrollbar {
   border: 1px solid #5897fb;
 }
 .select2-container--classic .select2-selection--single .select2-selection__rendered {
-  color: #444;
+  color: #4B5157;
   line-height: 28px;
 }
 .select2-container--classic .select2-selection--single .select2-selection__clear {

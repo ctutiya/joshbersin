@@ -15,7 +15,7 @@ $big = 999999999;
 
 <section class="block-top-padding-large block-bottom-padding-large">
   <div class="container align-center width-850">
-    <h1 class="large m-b-35">Insights on Work, Talent and HR technology</h1>
+    <h1 class="large m-b-35 type-black">Insights on Work, Talent and HR technology</h1>
     <form action="<?php echo home_url(); ?>" method="get" class="relative width-550 margin-auto">
       <div class="input-icon-right absolute">
         <input type="text" placeholder="Search Insights" name="s" id="search" value="<?php the_search_query(); ?>">
@@ -75,7 +75,7 @@ $big = 999999999;
 
             <div class="flex-77 bg-img row" id="latest-post" style="background-image: url(<?php echo get_the_post_thumbnail_url( $post->ID, 'large' ); ?>)">
               <div class="row no-gutters flex-column justify-content-end align-items-start p-55">
-                <a href="<?php echo $category[0]->slug; ?>" class="caps text-white type-bold font-12 letter-spacing m-b-25">
+                <a href="<?php echo home_url('category') . '/' . $category[0]->slug . '/'; ?>" class="caps text-white type-bold font-12 letter-spacing m-b-25">
                   <?php echo $category[0]->cat_name; ?>
                 </a>
                 <a href="<?php the_permalink(); ?>">
@@ -213,7 +213,7 @@ $exclude_posts = array_flatten( $exclude_posts );
 <section class="m-t-50">
   <div class="container">
     <div class="row gutter-30 margin-responsive">
-      <div class="flex-73">
+      <div class="flex-75">
         <div class="border-bottom p-b-20 p-l-25 p-r-25 m-b-25">
           <p class="type-bold font-14 letter-spacing caps">latest articles</p>
         </div>
@@ -243,6 +243,7 @@ $exclude_posts = array_flatten( $exclude_posts );
                 $category = get_the_category();
 
                 global $wpdb;
+                global $post;
 
                 $l=0;
                 $postid=get_the_id();
@@ -260,13 +261,13 @@ $exclude_posts = array_flatten( $exclude_posts );
                 ?>
 
                 <div class="row gutter-25 m-l-25 m-r-25 latest-articles-item">
-                  <div class="flex-41">
+                  <div class="flex-44">
                     <a href="<?php the_permalink(); ?>" class="full-height full-width block">
                       <img class="full-height full-width image-cover" src="<?php echo get_the_post_thumbnail_url( $post->ID, 'medium' ); ?>" alt="<?php the_title() ?>">
                     </a>
                   </div>
                   <div class="col">
-                    <a href="<?php echo $category[0]->slug; ?>" class="type-bold font-12 letter-spacing caps color-primary m-b-15 block"><?php echo $category[0]->cat_name; ?></p>
+                    <a href="<?php echo home_url('category') . '/' . $category[0]->slug . '/'; ?>" class="type-bold font-12 letter-spacing caps color-primary m-b-15 block"><?php echo $category[0]->cat_name; ?></p>
                     <a href="<?php the_permalink(); ?>" class="color-dark">
                       <h3 class="medium m-b-10"><?php the_title(); ?></h3>
                     </a>
@@ -277,7 +278,7 @@ $exclude_posts = array_flatten( $exclude_posts );
                       </div>
                       <div class="row col-auto align-items-center">
                         <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/comment.svg" alt="Comments">
-                        <p class="text-white subtitle font-12 p-l-5">342</p>
+                        <p class="text-white subtitle font-12 p-l-5"><?php echo get_comments_number( get_the_ID() ); ?></p>
                       </div>
                       <div class="row col-auto align-items-center">
                         <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/heart.svg" alt="Likes">
@@ -316,19 +317,8 @@ $exclude_posts = array_flatten( $exclude_posts );
         </div>
       </div>
       <div class="col">
-        <div class="m-t-40">
-          <div class="widget">
-            <div class="align-center">
-              <div class="p-25">
-                <p class="type-bold color-tertiary m-b-30 font-14">Join the only global professional development academy for HR</p>
-                <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/josh-bersin-academy.png" alt="Josh Bersin Academy">
-              </div>
-              <a href="#" class="p-t-10 p-b-10 p-l-25 p-r-25 border-top block type-bold caps font-14 color-dark">Learn More</a>
-            </div>
-          </div>
-          <div class="widget">
-            <a class="twitter-timeline" data-width="263" data-height="703" href="https://twitter.com/Josh_Bersin?ref_src=twsrc%5Etfw">Tweets by Josh_Bersin</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
+        <div class="m-t-40 block-bottom-padding-large">
+          <?php dynamic_sidebar('blog'); ?>
         </div>
       </div>
     </div>

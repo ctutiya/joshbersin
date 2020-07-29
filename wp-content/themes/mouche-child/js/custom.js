@@ -104,15 +104,15 @@ $(document).ready(function(){
   });
 
   // User registration password match
-  $('form.register').on('submit', function(event) {
-      event.preventDefault();
-
-      if ($('input[name="password"]').val() === $('input[name="afreg_additional_129"]').val()) {
-        alert('Passwords don\'t match');
-      } else {
-        $('form.register')[0].submit();
-      }
-  });
+  // $('form.register').on('submit', function(event) {
+  //     event.preventDefault();
+  //
+  //     if ($('input[name="password"]').val() === $('input[name="afreg_additional_129"]').val()) {
+  //       alert('Passwords don\'t match');
+  //     } else {
+  //       $('form.register')[0].submit();
+  //     }
+  // });
 
   // Account details password match
   $('form.change-account-details').on('submit', function(event) {
@@ -127,5 +127,14 @@ $(document).ready(function(){
 
   // Featured articles pagination
   customCarousel('featured', { items: 4 });
+
+  // Edit my account - remove buttons
+  $('[data-clear]').on('click', function(event) {
+    event.preventDefault();
+
+    var form = $(this).attr('data-clear');
+    $('[data-edit="' + form + '"] input').val('');
+    $('form.change-account-details').submit();
+  });
 
 });

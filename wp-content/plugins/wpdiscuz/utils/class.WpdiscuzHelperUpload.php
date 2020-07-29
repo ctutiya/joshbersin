@@ -325,12 +325,13 @@ class WpdiscuzHelperUpload implements WpDiscuzConstants {
             if ($mimeType = $this->isImage($file)) {
                 if ((strpos($mimeType, "image/") !== false) && empty($extension)) {
                     $file["name"] .= ".jpg";
+                    $extension = "jpg";
                 }
             } else {
                 $mimeType = $this->getMimeType($file, $extension);
             }
 
-            if ($this->isAllowedFileType($mimeType)) {
+            if ($this->isAllowedFileType($mimeType, $extension)) {
                 if (empty($extension)) {
                     if (strpos($mimeType, "image/") === false) {
                         foreach ($this->mimeTypes as $ext => $mimes) {
@@ -377,13 +378,14 @@ class WpdiscuzHelperUpload implements WpDiscuzConstants {
         wp_send_json_success($response);
     }
 
-    private function isAllowedFileType($mimeType) {
+    private function isAllowedFileType($mimeType, $extension) {
         $isAllowed = false;
         if (!empty($this->mimeTypes) && is_array($this->mimeTypes)) {
             foreach ($this->mimeTypes as $ext => $mimes) {
-                $isAllowed = in_array($mimeType, explode("|", $mimes));
-                if ($isAllowed) {
-                    break;
+                if ($ext === $extension) {
+                    if ($isAllowed = in_array($mimeType, explode("|", $mimes))) {
+                        break;
+                    }
                 }
             }
         }
@@ -400,8 +402,9 @@ class WpdiscuzHelperUpload implements WpDiscuzConstants {
         } elseif ($extension) {
             foreach ($this->mimeTypes as $ext => $mimeTypes) {
                 $exp = explode("|", $mimeTypes);
-                if (in_array($extension, $exp)) {
+                if ($extension === $ext) {
                     $mimeType = $exp[0];
+                    break;
                 }
             }
         }

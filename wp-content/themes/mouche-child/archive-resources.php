@@ -6,9 +6,9 @@ get_header( $navigation );
 ?>
 
 <section class="header-top-padding-normal header-bottom-padding-normal bg-secondary">
-  <div class="container width-950 align-center p-t-15 p-b-15">
+  <div class="container width-950 align-center p-t-40 p-b-25">
     <h1 class="large m-b-15">Resources</h1>
-    <p class="m-b-25">Here you’ll find special reports, videos, podcasts, and other information produced by Josh Bersin.</p>
+    <p class="m-b-20 color-tertiary">Here you’ll find special reports, videos, podcasts, and other information produced by Josh Bersin.</p>
     <a href="#" onclick="history.back();">
       <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/arrow-primary.svg" alt="Go back">
     </a>
@@ -43,7 +43,7 @@ $exclude_posts = array_flatten( $exclude_posts );
     if ( $featured_posts->have_posts() ) {
       ?>
 
-      <p class="type-bold font-14 letter-spacing caps p-b-20 border-bottom m-b-20">featured RESOURCES</p>
+      <p class="type-bold font-14 letter-spacing caps p-b-20 border-bottom m-b-20 color-tertiary">featured RESOURCES</p>
       <div class="row gutter-30 margin-responsive" id="featured-resources-row">
 
       <?php
@@ -55,7 +55,7 @@ $exclude_posts = array_flatten( $exclude_posts );
         <div class="col">
           <div class="featured-resources-item">
             <a href="<?php the_permalink(); ?>">
-              <img class="full-width height-160 image-cover m-b-30" src="<?php echo get_the_post_thumbnail_url( $post->ID, 'medium' ); ?>" alt="<?php the_title(); ?>">
+              <img class="full-width height-160 image-cover m-b-20" src="<?php echo get_the_post_thumbnail_url( $post->ID, 'medium' ); ?>" alt="<?php the_title(); ?>">
             </a>
             <div class="p-l-20 p-r-20 p-b-30">
               <a href="<?php the_permalink() ?>" class="color-tertiary">
@@ -104,7 +104,7 @@ if ( $the_query->have_posts() ) { ?>
 
 <section class="block-bottom-padding-normal">
   <div class="container">
-    <p class="type-bold font-14 letter-spacing caps p-b-20 border-bottom m-b-20">RESOURCES</p>
+    <p class="type-bold font-14 letter-spacing caps p-b-20 border-bottom m-b-20 color-tertiary">RESOURCES</p>
     <div class="row gutter-30 margin-responsive justify-content-between" id="resources-row">
       <?php
 

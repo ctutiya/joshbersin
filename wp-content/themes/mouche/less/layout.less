@@ -968,7 +968,7 @@ html {
 
 .generate-flex(100);
 
-.generate-flex(@n, @i: 10) when (@i =< @n) {
+.generate-flex(@n, @i: 8) when (@i =< @n) {
   @media (min-width: 481px) {
     .flex-@{i} {
       .flexbox(~"@{i}%");

@@ -33,8 +33,8 @@ get_header( $navigation );
 ?>
 
 <section class="header-top-padding-normal header-bottom-padding-normal bg-secondary">
-  <div class="container width-950 align-center p-t-50 p-b-50">
-    <h1 class="large m-b-25">My Account</h1>
+  <div class="container width-950 align-center p-t-60 p-b-50">
+    <h1 class="large m-b-20">My Account</h1>
     <a href="#" onclick="history.back();">
       <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/arrow-primary.svg" alt="Go back">
     </a>

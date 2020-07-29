@@ -13,6 +13,14 @@ update_option( $posts_read_key, $posts_read + 1 );
 
 set_post_views( get_the_ID() );
 
+global $current_user;
+
+get_currentuserinfo();
+
+if ( $current_user ) {
+  $user_meta = get_user_meta( $current_user->ID );
+}
+
 global $wpdb;
 
 $l=0;
@@ -27,20 +35,22 @@ if( !empty( $row1 ) ){
 $totalrow1 = $wpdb->get_results( "SELECT id FROM $wpdb->post_like_table WHERE postid = '$postid'");
 $total_like1 = $wpdb->num_rows;
 
+$category = get_the_category();
+
 ?>
 
 <section class="header-top-padding-normal header-bottom-padding-normal bg-secondary">
   <div class="container align-center width-950 p-t-10 p-b-10">
-    <p class="type-bold font-12 letter-spacing caps color-primary m-b-30">Enterprise Learning</p>
-    <h1 class="medium m-b-30">Corporate Learning In The Crisis: Microsoft Teams Coming On Strong</h1>
+    <a href="<?php echo $category[0]->slug; ?>" class="type-bold block font-12 letter-spacing caps color-primary m-b-30"><?php echo $category[0]->cat_name; ?></a>
+    <h1 class="medium m-b-30"><?php the_title(); ?></h1>
     <div class="row gutter-5 align-items-center justify-content-center">
       <img class="col-auto" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/clock.svg" alt="Publish date">
-      <span class="col-auto">May 13, 2020.</span>
+      <span class="col-auto color-tertiary font-12"><?php the_time( 'M j, Y' ); ?>.</span>
     </div>
   </div>
 </section>
 
-<section class="block-top-padding-large block-bottom-padding-large">
+<section class="block-top-padding-large">
   <?php if ( have_posts() ): ?>
     <?php while ( have_posts() ): ?>
       <?php the_post(); ?>
@@ -79,16 +89,34 @@ $total_like1 = $wpdb->num_rows;
               </div>
             </div>
           </div>
-          <div class="flex-64">
-            <article id="post-article">
+          <div class="flex-66">
+            <article id="post-article" class="block-bottom-padding-large">
               <?php the_content(); ?>
             </article>
-            <div id="post-comments">
+            <div id="post-comments" class="block-top-padding-large border-top">
+              <h2 class="font-26 p-b-15 border-bottom">Leave a Comment</h2>
+              <div class="border-bottom row justify-content-end align-items-center p-t-15 p-b-15">
+                <?php if ( !is_user_logged_in() ): ?>
+                  <p class="subtitle font-14">You need to log in to comment</p>
+                  <p class="m-l-5">
+                    <?php $redirect = '?redirect-url=' . home_url( add_query_arg( array(), $wp->request ) ); ?>
+                    <a class="font-14" href="<?php echo home_url('/my-account') . $redirect; ?>">Log in</a>
+                  </p>
+                <?php else: ?>
+                  <p class="subtitle font-14">You are logged in as</p>
+                  <p class="m-l-5">
+                    <a class="font-14" href="<?php echo home_url('my-account'); ?>"><?php echo $user_meta['first_name'][0] . ' ' . $user_meta['last_name'][0]; ?></a>
+                  </p>
+                <?php endif; ?>
+              </div>
               <?php comments_template(); ?>
             </div>
           </div>
           <div class="col">
-
+            <?php get_search_form(); ?>
+            <div class="m-t-40 block-bottom-padding-large">
+              <?php dynamic_sidebar('inner'); ?>
+            </div>
           </div>
         </div>
       </div>

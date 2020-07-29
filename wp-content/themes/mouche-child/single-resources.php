@@ -12,8 +12,10 @@ get_header( $navigation );
 
     <section class="header-top-padding-normal header-bottom-padding-normal bg-secondary">
       <div class="container align-center width-850 p-t-10 p-b-10">
-        <p class="type-bold font-12 letter-spacing caps color-primary m-b-30">resources</p>
-        <h1 class="large m-b-25"><?php the_title(); ?></h1>
+        <p class="type-bold font-12 letter-spacing caps color-primary m-b-30">
+          <a href="<?php echo home_url('resources'); ?>">resources</a>
+        </p>
+        <h1 class="large m-b-15"><?php the_title(); ?></h1>
         <a href="#" onclick="history.back();">
           <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/arrow-primary.svg" alt="Go back">
         </a>
@@ -24,10 +26,10 @@ get_header( $navigation );
       <div class="container">
         <div class="row justify-content-between no-gutters align-items-center">
           <div class="flex-45">
-            <img src="<?php echo get_the_post_thumbnail_url( $post->ID, 'large' ); ?>" alt="Download resource">
+            <img class="full-width" src="<?php echo get_the_post_thumbnail_url( $post->ID, 'large' ); ?>" alt="Download resource">
           </div>
-          <div class="flex-45">
-            <div class="m-b-30">
+          <div class="flex-46">
+            <div class="m-b-30 single-resource-content color-tertiary">
               <?php the_content(); ?>
             </div>
             <?php
