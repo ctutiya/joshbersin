@@ -16065,7 +16065,7 @@ footer .menu-item a {
   position: relative;
   z-index: 100;
 }
-.logged-in [class*="navigation_"] {
+.logged-in.admin-bar [class*="navigation_"] {
   top: 32px;
 }
 .image-circle {
