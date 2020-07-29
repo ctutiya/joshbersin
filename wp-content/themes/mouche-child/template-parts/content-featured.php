@@ -30,7 +30,7 @@ $total_like1 = $wpdb->num_rows;
 
     ?>
   </a>
-  <a href="#" class="color-dark">
+  <a href="<?php the_permalink(); ?>" class="color-dark">
     <h3 class="small m-b-15"><?php echo the_title(); ?></h3>
   </a>
   <div class="row gutter-10">
