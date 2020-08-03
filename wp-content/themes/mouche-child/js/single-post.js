@@ -3,7 +3,7 @@ $ = jQuery;
 jQuery(document).ready(function($) {
   // Sticky share buttons
   $('#share-buttons').stick_in_parent({
-    offset_top: 50,
+    offset_top: 100,
   });
 
   // Like button

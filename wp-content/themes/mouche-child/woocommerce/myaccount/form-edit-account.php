@@ -254,7 +254,7 @@ if ( $current_user ) {
         <div data-edit="password">
           <p class="font-20 type-bold m-b-30 color-tertiary">Change Password</p>
           <label class="block m-b-20">
-            <div class="caps type-bold font-14">News password</div>
+            <div class="caps type-bold font-14">New password</div>
             <input class="no-radius full-width" type="password" name="password" placeholder="New password">
           </label>
           <label class="block">
