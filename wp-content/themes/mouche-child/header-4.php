@@ -86,7 +86,7 @@ if ( $current_user ) {
 						    </label>
 								<label class="block">
 									<div class="type-bold font-14">Password*</div>
-									<input class="full-width" autocomplete="off" type="password" name="password" value="" placeholder="Password">
+									<input class="full-width m-t-10" autocomplete="off" type="password" name="password" value="" placeholder="Password">
 								</label>
 								<div class="row no-gutters justify-content-end">
 									<a class="m-t-10 block font-14 type-regular m-b-10" href="<?php echo esc_url( wp_lostpassword_url() ); ?>">

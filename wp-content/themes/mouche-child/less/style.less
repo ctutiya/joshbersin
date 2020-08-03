@@ -57,9 +57,19 @@ a.subtitle:hover {
 	}
 }
 
-.featured-articles-row .owl-item {
-	&:not(:nth-child(4n)) {
+.featured-articles-row {
+	.owl-item {
 		border-right: 1px solid @border-color;
+	}
+
+	.owl-stage-outer:after {
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    width: 1px;
+	    height: 100%;
+	    content: '';
+	    background: white;
 	}
 }
 
@@ -1041,6 +1051,28 @@ h1 {
 	 line-height: 27px;
  }
 
+ input[type="text"],
+ input[type="url"],
+ input[type="tel"],
+ input[type="email"],
+ input[type="password"],
+ textarea {
+	 color: @color-tertiary !important;
+ }
+
+ nav.navigation_4 {
+    height: 80px;
+    display: flex;
+    align-items: center;
+
+		a.logo {
+    	display: flex;
+		}
+}
+
+label {
+	color: @color-tertiary;
+}
 // Add your styles above this line
 
 @import './responsive.less';

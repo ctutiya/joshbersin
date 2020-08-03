@@ -133,7 +133,7 @@ $big = 999999999;
                   <a href="<?php the_permalink() ?>" class="subtitle type-regular">
                     <p class="font-14"><?php the_title(); ?></p>
                   </a>
-                  <p class="subtitle text-white font-12"><?php echo time_ago(); ?></p>
+                  <p class="subtitle text-white font-12 m-t-5"><?php echo time_ago(); ?></p>
                 </div>
               </li>
 
