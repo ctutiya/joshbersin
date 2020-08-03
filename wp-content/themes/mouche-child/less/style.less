@@ -62,14 +62,18 @@ a.subtitle:hover {
 		border-right: 1px solid @border-color;
 	}
 
-	.owl-stage-outer:after {
-	    position: absolute;
-	    top: 0;
-	    right: 0;
-	    width: 1px;
-	    height: 100%;
-	    content: '';
-	    background: white;
+	.owl-stage-outer {
+		position: relative;
+		
+		&:after {
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    width: 1px;
+		    height: 100%;
+		    content: '';
+		    background: white;
+		}
 	}
 }
 
