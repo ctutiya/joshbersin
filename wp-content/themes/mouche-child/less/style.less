@@ -415,6 +415,7 @@ li.woocommerce-MyAccount-navigation-link {
     width: 100%;
     height: 100%;
     overflow: scroll;
+		z-index: 10000000;
 }
 
 .btn.small {
@@ -785,7 +786,7 @@ body:not(.page-template-page-home) {
 	}
 }
 
-body.page-template-page-home {
+body.page-template-page-home, body.page-id-105:not(.logged-in) {
 	.select2-container {
 	    z-index: 10002;
 	}
@@ -1118,8 +1119,7 @@ span.afreg_radios {
 }
 
 .woocommerce-notices-wrapper {
-    margin-bottom: 30px;
-		margin-top: -30px;
+    margin-bottom: 30px !important;
 }
 // Add your styles above this line
 

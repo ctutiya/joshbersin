@@ -25,7 +25,7 @@ get_header( $navigation );
     <section class="block-top-padding-large block-bottom-padding-large">
       <div class="container">
         <div class="row justify-content-between no-gutters align-items-center">
-          <div class="row flex-column">
+          <div class="row flex-column flex-45">
             <img class="full-width" src="<?php echo get_the_post_thumbnail_url( $post->ID, 'large' ); ?>" alt="Download resource">
           </div>
           <div class="flex-46">
