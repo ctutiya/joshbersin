@@ -779,8 +779,16 @@ label[for="profile-picture-url"] {
 	}
 }
 
-.select2-container {
-    z-index: 10000002;
+body:not(.page-template-page-home) {
+	.select2-container {
+	    z-index: 10000002;
+	}
+}
+
+body.page-template-page-home {
+	.select2-container {
+	    z-index: 10002;
+	}
 }
 
 select[name="afreg_additional_123"] + .select2 {
@@ -1107,6 +1115,11 @@ span.afreg_radios {
 	    align-items: center;
 		}
 	}
+}
+
+.woocommerce-notices-wrapper {
+    margin-bottom: 30px;
+		margin-top: -30px;
 }
 // Add your styles above this line
 
