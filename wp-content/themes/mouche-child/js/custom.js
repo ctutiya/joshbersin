@@ -137,4 +137,9 @@ $(document).ready(function(){
     $('form.change-account-details').submit();
   });
 
+  // Account change feedback
+  $('button[name="save_account_details"]').on('click', function() {
+    alert('Your information has been updated');
+  });
+
 });
