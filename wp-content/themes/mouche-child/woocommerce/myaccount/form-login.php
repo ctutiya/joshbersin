@@ -47,7 +47,7 @@ get_header( $navigation );
 		<?php
 		if ( isset( $_GET['register'] ) ): ?>
 			<!-- Register -->
-			<div class="width-550 margin-auto">
+			<div class="width-550 margin-auto m-t-20">
 				<div>
 					<?php do_action( 'woocommerce_before_customer_login_form' ); ?>
 				</div>
@@ -121,7 +121,7 @@ get_header( $navigation );
 
 			<?php else: ?>
 			<!-- Sign in -->
-			<form class="woocommerce-form woocommerce-form-login login width-300 margin-auto" method="post">
+			<form class="m-t-20 woocommerce-form woocommerce-form-login login width-300 margin-auto" method="post">
 				<h2 class="medium align-center m-b-50 color-tertiary">Sign In</h2>
 		  	<?php do_action( 'woocommerce_login_form_start' ); ?>
 				<label class="block m-b-20">
