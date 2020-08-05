@@ -142,13 +142,9 @@ if ( $current_user ) {
 <section>
   <div class="container-fluid p-l-25 p-r-0">
     <h2 class="medium p-b-15 border-bottom m-b-30 color-tertiary">Password</h2>
-    <p class="m-b-45 color-tertiary">To change your password, you’ll need to verify the current one first. Then create a password you’re not using elsewhere, and be sure to change it regularly as well as anytime you suspect it’s been compromised.</p>
-    <div class="row justify-content-between gutter-15 align-items-center">
-      <div class="col-auto color-tertiary">
-        Current Password
-      </div>
-      <div class="flex-14">
-        <p class="type-bold color-tertiary">***********</p>
+    <div class="row justify-content-between gutter-30">
+      <div class="col color-tertiary">
+        To change your password, you’ll need to verify the current one first. Then create your new password.
       </div>
       <div class="col-auto">
         <a href="#" id="password" class="btn small primary aling-items-center open-account-edit-popup">change <i class="icon-arrow_right_alt m-l-5"></i></a>
@@ -253,6 +249,10 @@ if ( $current_user ) {
         </div>
         <div data-edit="password">
           <p class="font-20 type-bold m-b-30 color-tertiary">Change Password</p>
+          <label class="block m-b-20">
+            <div class="caps type-bold font-14">Current password</div>
+            <input class="no-radius full-width" type="password" name="current-password" placeholder="Current password">
+          </label>
           <label class="block m-b-20">
             <div class="caps type-bold font-14">New password</div>
             <input class="no-radius full-width" type="password" name="password" placeholder="New password">

@@ -31,7 +31,7 @@ $as_published_in = get_field( 'as_published_in' );
           <div class="flex-9"></div>
           <div class="flex-66">
             <?php if ( $as_published_in ): ?>
-              <div class="type-bold font-12 caps m-b-50 row">
+              <div class="type-bold font-12 caps m-b-50 row align-items-center">
                 <span class="m-r-5">as published in </span> <span><?php echo $as_published_in; ?></span>
               </div>
             <?php endif; ?>
