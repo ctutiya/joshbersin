@@ -95,10 +95,10 @@ $category = get_the_category();
             </article>
             <div id="post-comments" class="block-top-padding-large border-top">
               <h2 class="font-26 p-b-15 border-bottom">Leave a Comment</h2>
-              <div class="border-bottom row justify-content-end align-items-center p-t-15 p-b-15">
+              <div class="row align-items-center p-t-15 p-b-15">
                 <?php if ( !is_user_logged_in() ): ?>
                   <p class="subtitle font-14">You need to log in to comment</p>
-                  <p class="m-l-5">
+                  <p class="m-l-5 font-14">
                     <?php $redirect = '?redirect-url=' . home_url( add_query_arg( array(), $wp->request ) ); ?>
                     <a class="font-14" href="<?php echo home_url('/my-account') . $redirect; ?>">Log in</a>
                   </p>
