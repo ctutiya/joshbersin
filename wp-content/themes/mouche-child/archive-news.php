@@ -10,7 +10,7 @@ $big = 999999999;
 <section class="header-top-padding-normal header-bottom-padding-normal bg-secondary">
   <div class="container width-950 align-center p-t-15 p-b-15">
     <h1 class="large m-b-15">News</h1>
-    <p class="m-b-25 color-tertiary">Check this page for the latest news releases and articles related to Josh Bersin's work and the Josh Bersin Academy.  For press-related queries, please contact Linda Galloway at <a href="mailto:linda@bersinpartners.com" class="type-bold">linda@bersinpartners.com</a>.</p>
+    <p class="m-b-25 color-tertiary">Check this page for the latest news releases and articles related to Josh Bersin's work and the Josh Bersin Academy.  For press-related queries, please contact Linda Galloway at <a href="mailto:linda@bersinpartners.com" target="_blank" class="type-bold">linda@bersinpartners.com</a>.</p>
     <a href="#" onclick="history.back();">
       <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/arrow-primary.svg" alt="Go back">
     </a>

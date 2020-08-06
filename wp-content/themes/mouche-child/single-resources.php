@@ -26,7 +26,7 @@ get_header( $navigation );
       <div class="container">
         <div class="row justify-content-between no-gutters align-items-center">
           <div class="row flex-column flex-45">
-            <img class="full-width" src="<?php echo get_the_post_thumbnail_url( $post->ID, 'large' ); ?>" alt="Download resource">
+            <img class="full-width height-300 image-cover" src="<?php echo get_the_post_thumbnail_url( $post->ID, 'large' ); ?>" alt="Download resource">
           </div>
           <div class="flex-46">
             <div class="m-b-30 single-resource-content color-tertiary">

@@ -33,22 +33,22 @@ get_header( $navigation );
     <div class="block-top-padding-large row align-items-center">
       <span class="col-auto p-r-45 font-12 color-primary letter-spacing type-bold caps">featured in</span>
       <div class="col row justify-content-between align-items-center">
-        <div class="col-auto">
+        <div class="col-auto row align-items-center no-gutters">
           <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/harvard-business-review.png" alt="Harvard Business Review">
         </div>
-        <div class="col-auto">
+        <div class="col-auto row align-items-center no-gutters">
           <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/forbes.png" alt="Forbes">
         </div>
-        <div class="col-auto">
+        <div class="col-auto row align-items-center no-gutters">
           <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/clo.png" alt="Clo">
         </div>
-        <div class="col-auto">
+        <div class="col-auto row align-items-center no-gutters">
           <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/fast-company.png" alt="Fast Company">
         </div>
-        <div class="col-auto">
+        <div class="col-auto row align-items-center no-gutters">
           <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/wsj.png" alt="Wsj">
         </div>
-        <div class="col-auto">
+        <div class="col-auto row align-items-center no-gutters">
           <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/human-resource-executive.png" alt="Human Resource Executive">
         </div>
       </div>

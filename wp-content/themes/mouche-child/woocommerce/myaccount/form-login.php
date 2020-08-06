@@ -17,6 +17,9 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+session_start();
+
 ?>
 
 <?php
@@ -43,14 +46,17 @@ get_header( $navigation );
 
 <section class="block-top-padding-large block-bottom-padding-large">
 	<div class="container">
-		<?php do_action( 'woocommerce_before_customer_login_form' ); ?>
 		<?php
 		if ( isset( $_GET['register'] ) ): ?>
 			<!-- Register -->
-			<div class="width-550 margin-auto m-t-20">
-				<div>
-					<?php do_action( 'woocommerce_before_customer_login_form' ); ?>
-				</div>
+			<div class="width-550 margin-auto">
+				<?php
+
+				if ( $_SESSION['user-registration'] ) {
+					wc_print_notice( $_SESSION['user-registration'], $notice_type = 'success' );
+				}
+
+				?>
 
 				<?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
 
@@ -75,7 +81,7 @@ get_header( $navigation );
 
 						<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
 
-						<p class="color-dark font-14 m-b-30"><span class="color-red">*</span>required</p>
+						<p class="color-dark font-14 m-b-30">*required</p>
 						<button type="submit" class="sign-in-btn btn primary small full-width" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?> <i class="m-l-5 icon-arrow_right_alt"></i></button>
 
 						<?php do_action( 'woocommerce_register_form_end' ); ?>
@@ -121,7 +127,15 @@ get_header( $navigation );
 
 			<?php else: ?>
 			<!-- Sign in -->
-			<form class="m-t-20 woocommerce-form woocommerce-form-login login width-300 margin-auto" method="post">
+			<?php
+
+			if ( $_SESSION['user-login'] ) {
+				wc_print_notice( $_SESSION['user-login'], $notice_type = 'success' );
+				unset( $_SESSION['user-login'] );
+			}
+
+			?>
+			<form class="woocommerce-form woocommerce-form-login login width-300 margin-auto" method="post">
 				<h2 class="medium align-center m-b-50 color-tertiary">Sign In</h2>
 		  	<?php do_action( 'woocommerce_login_form_start' ); ?>
 				<label class="block m-b-20">
@@ -180,7 +194,7 @@ get_header( $navigation );
 	</div>
 </section>
 
-<?php if ( isset( $_GET['redirect-url'] ) && isset( $_GET['register'] ) ): ?>
+<?php if ( isset( $_GET['redirect-url'] ) && isset( $_GET['register'] ) && !isset( $_SESSION['user-registration'] ) ): ?>
 	<div class="registration-overlay row no-gutters justify-content-center align-items-center">
 		<div class="registration-popup relative bg-white m-t-50 m-b-50 width-350 p-l-35 p-r-35 p-t-50 p-b-50 align-center color-tertiary">
 			<img class="m-b-20" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/josh-bersin-logo-square.png" alt="Register to continue">
@@ -201,5 +215,7 @@ get_header( $navigation );
 $footer = get_field('footer', 'options') ?: null;
 
 get_footer( $footer );
+
+unset( $_SESSION['user-registration'] );
 
 ?>

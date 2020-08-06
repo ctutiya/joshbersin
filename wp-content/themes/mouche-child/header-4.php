@@ -70,6 +70,7 @@ if ( $current_user ) {
 						<img class="m-r-10" src="<?php echo bloginfo('stylesheet_directory'); ?>/images/icon/man.svg" alt="Sign in">
 						<a class="font-14 type-bold subtitle m-r-35" href="<?php echo home_url('my-account') ?>">Sign In</a>
 						<div class="absolute sign-in-dropdown p-t-20 p-b-20 p-l-15 p-r-15">
+							<?php do_action( 'woocommerce_before_customer_login_form' ); ?>
 							<div class="row justify-content-between align-items-center p-b-15 border-bottom m-b-20">
 								<div class="col-auto">
 									<h2 class="small">Sign in</h2>

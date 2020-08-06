@@ -17,6 +17,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
+session_start();
+
 do_action( 'woocommerce_before_edit_account_form' ); ?>
 
 
@@ -33,6 +35,10 @@ if ( $current_user ) {
 ?>
 
 
+<?php if ( $_SESSION['update_account'] ) {
+  wc_print_notice( $_SESSION['update_account'], $notice_type = 'success');
+  unset( $_SESSION['update_account'] );
+} ?>
 <section class="block-bottom-padding-large">
   <div class="container-fluid p-l-25 p-r-25">
     <h2 class="medium p-b-15 border-bottom m-b-25 color-tertiary">Profile</h2>
@@ -50,7 +56,7 @@ if ( $current_user ) {
           </div>
         </div>
       </div>
-      <div class="flex-20">
+      <div class="flex-22">
         <p class="caps color-primary m-b-10 type-bold font-12">Company</p>
         <p class="color-tertiary"><?php echo $user_meta['afreg_additional_120'][0]; ?></p>
       </div>
@@ -217,13 +223,14 @@ if ( $current_user ) {
           <p class="font-20 type-bold m-b-30 color-tertiary">Edit Job Type</p>
           <label class="block">
             <div class="caps type-bold font-14">Job Type</div>
-            <select class="full-width" name="afreg_additional_123" value="<?php echo esc_attr( $user_meta['afreg_additional_123'][0] ); ?>" placeholder="Job Type">
-              <option value="HR or L&D">HR or L&D</option>
-              <option value="Business">Business</option>
-              <option value="Vendor">Vendor</option>
-              <option value="Consultant">Consultant</option>
-              <option value="Recruiting">Recruiting</option>
-              <option value="Other">Other</option>
+            <select class="full-width" name="afreg_additional_123">
+              <option value="">Select an option...</option>
+              <option <?php if (esc_attr( $user_meta['afreg_additional_123'][0] ) == 'HR or L&D') echo ' selected '; ?> value="HR or L&D">HR or L&D</option>
+              <option <?php if (esc_attr( $user_meta['afreg_additional_123'][0] ) == 'Business') echo ' selected '; ?> value="Business">Business</option>
+              <option <?php if (esc_attr( $user_meta['afreg_additional_123'][0] ) == 'Vendor') echo ' selected '; ?> value="Vendor">Vendor</option>
+              <option <?php if (esc_attr( $user_meta['afreg_additional_123'][0] ) == 'Consultant') echo ' selected '; ?> value="Consultant">Consultant</option>
+              <option <?php if (esc_attr( $user_meta['afreg_additional_123'][0] ) == 'Recruiting') echo ' selected '; ?> value="Recruiting">Recruiting</option>
+              <option <?php if (esc_attr( $user_meta['afreg_additional_123'][0] ) == 'Other') echo ' selected '; ?> value="Other">Other</option>
             </select>
           </label>
         </div>

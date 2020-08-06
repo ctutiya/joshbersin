@@ -102,7 +102,7 @@ $the_query = new WP_Query( $args );
 
 if ( $the_query->have_posts() ) { ?>
 
-<section class="block-bottom-padding-normal">
+<section>
   <div class="container">
     <p class="type-bold font-14 letter-spacing caps p-b-20 border-bottom m-b-20 color-tertiary">RESOURCES</p>
     <div class="row gutter-30 margin-responsive justify-content-between" id="resources-row">
@@ -113,17 +113,17 @@ if ( $the_query->have_posts() ) { ?>
 
           ?>
 
-          <div class="col-md-4">
-            <div class="border row flex-column">
-              <div class="row gutter-15">
-                <div class="col-auto">
+          <div class="col-md-4 row flex-column">
+            <div class="border row flex-column full-height">
+              <div class="row gutter-15 full-height">
+                <div class="flex-54">
                   <a href="<?php the_permalink(); ?>" class="full-height block">
                     <img class="image-cover full-height full-width" src="<?php echo get_the_post_thumbnail_url( $post->ID, 'medium' ); ?>" alt="<?php the_title(); ?>">
                   </a>
                 </div>
                 <div class="col">
                   <div class="p-r-15 p-t-15 p-b-15 full-height relative">
-                    <a href="<?php the_permalink(); ?>" class="color-tertiary">
+                    <a href="<?php the_permalink(); ?>" class="color-tertiary block m-b-50">
                       <h3 class="medium m-b-10"><?php the_title(); ?></h3>
                     </a>
                     <a href="<?php the_permalink(); ?>" class="btn small primary resources-button">Learn More <i class="m-l-5 icon-arrow_right_alt"></i></a>

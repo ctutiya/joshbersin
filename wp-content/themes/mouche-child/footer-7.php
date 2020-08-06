@@ -16,7 +16,7 @@
   <footer class="footer_7">
     <div class="container p-t-60 p-b-60">
       <div class="align-center">
-        <a href="#">
+        <a href="<?php echo home_url(); ?>">
           <img class="m-b-40" src="<?php echo $logo; ?>" alt="<?php echo bloginfo('name'); ?>">
         </a>
         <?php

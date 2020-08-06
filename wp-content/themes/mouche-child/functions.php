@@ -1,4 +1,9 @@
 <?php
+// Enable sessions
+if ( !session_id() ) {
+  session_start();
+}
+
 // enqueue scripts
 function child_scripts() {
   global $wp_query;
@@ -98,6 +103,7 @@ function update_account() {
   global $current_user;
 
   get_currentuserinfo();
+  session_start();
 
   $fields = array(
     'first_name'           => 'first_name',
@@ -134,10 +140,19 @@ function update_account() {
   }
 
   $password = $_POST['password'];
+  $current_password = $_POST['current-password'];
 
   if ( isset( $password ) && !empty( $password ) ) {
     if ( $current_user ) {
-      wp_update_user( array( 'ID' => $current_user->id, 'user_pass' => $password ) );
+      if ( wp_check_password( $current_password, $current_user->data->user_pass, $current_user->ID ) ) {
+        wp_update_user( array( 'ID' => $current_user->id, 'user_pass' => $password ) );
+      } else {
+        $_SESSION['update_account'] = 'Your current password is wrong.';
+
+        wp_redirect( home_url('my-account/edit-account') );
+
+        exit;
+      }
     }
   }
 
@@ -151,6 +166,8 @@ function update_account() {
     }
   }
 
+  $_SESSION['update_account'] = 'Your account has been updated.';
+
   wp_redirect( home_url('my-account/edit-account') );
 	exit;
 }
@@ -158,7 +175,7 @@ add_action( 'admin_post_update_account', 'update_account' );
 
 // Get profile picture source
 function get_current_user_profile_picture( $url, $id_or_email, $args ) {
-  $profile_picture = get_stylesheet_directory_uri() . '/images/icon/user.svg';
+  $profile_picture = get_stylesheet_directory_uri() . '/images/icon/user.png';
 
   $profile_picture_base64 = get_user_meta( $id_or_email, 'profile_picture_base64' );
 
@@ -325,7 +342,7 @@ add_filter( 'init', 'download_resource' );
 add_filter( 'get_avatar_url', 'get_current_user_profile_picture', 999, 3 );
 
 function filter_get_avatar( $avatar, $id_or_email, $size, $default, $alt, $args ) {
-  $profile_picture = get_stylesheet_directory_uri() . '/images/icon/user.svg';
+  $profile_picture = get_stylesheet_directory_uri() . '/images/icon/user.png';
 
   $profile_picture_base64 = get_user_meta( $id_or_email, 'profile_picture_base64' );
 
@@ -365,7 +382,7 @@ function events_widget( $args ) {
 
         $output .= '<div class="p-t-15 row gutter-20">';
         $output .= '<div class="col-auto align-center color-primary">';
-        $output .= '<p class="font-30 type-bold">' . get_the_time('d') . '</p>';
+        $output .= '<p class="font-30 type-bold m-t--10">' . get_the_time('d') . '</p>';
         $output .= '<p class="font-12">' . get_the_time('M') . '</p>';
         $output .= '</div>';
         $output .= '<div class="col">';
@@ -438,3 +455,54 @@ function custom_search_form( $form ) {
    return $form;
 }
 add_filter( 'get_search_form', 'custom_search_form' );
+
+function action_woocommerce_register_post( $errors ) {
+  session_start();
+
+  if ( $_POST['first_name'] === '' ||  $_POST['last_name'] === '' ||  $_POST['afreg_additional_119'] === '' ||  $_POST['afreg_additional_120'] === '' ||  $_POST['afreg_additional_121'] === '' ||  $_POST['afreg_additional_128'] === '' ) {
+    $_SESSION['user-registration'] = 'All fields with asterisks are required.';
+  }
+
+  if ( get_user_by( 'email', $_POST['email'] ) ) {
+    $_SESSION['user-registration'] = 'An account is already registered with your email address. Please log in.';
+  }
+
+  if ( $_POST['password'] !== $_POST['afreg_additional_129'] ) {
+    $_SESSION['user-registration'] = 'The passwords don\'t match.';
+  }
+
+  if ( !is_email( $_POST['email'] ) ) {
+    $_SESSION['user-registration'] = 'Please enter a valid email address.';
+  }
+
+  return $errors;
+};
+
+add_action( 'woocommerce_process_registration_errors', 'action_woocommerce_register_post', 10, 1 );
+
+add_filter( 'woocommerce_min_password_strength', 'reduce_min_strength_password_requirement' );
+function reduce_min_strength_password_requirement( $strength ) {
+  return 0;
+}
+
+function action_woocommerce_login_form(  ) {
+
+  if ( isset( $_POST['password']) || isset( $_POST['username'] ) ) {
+    $user = get_user_by( 'email', $_POST['username'] );
+
+    if ( !wp_check_password( $_POST['password'], $user->data->user_pass, $user->ID ) ) {
+      $_SESSION['user-login'] = 'The email or password entered is wrong.';
+    }
+
+    if ( $_POST['username'] === '' ) {
+      $_SESSION['user-login'] = 'Please enter your email.';
+    }
+
+    if ( $_POST['password'] === '' ) {
+      $_SESSION['user-login'] = 'Please enter your password.';
+    }
+  }
+};
+
+// add the action
+add_action( 'woocommerce_login_form', 'action_woocommerce_login_form', 10, 0 );

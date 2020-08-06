@@ -12,7 +12,7 @@ get_header( $navigation );
 <section class="header-top-padding-normal header-bottom-padding-normal bg-secondary color-tertiary">
   <div class="container width-950 align-center p-t-15 p-b-15">
     <h1 class="large m-b-15">Events</h1>
-    <p class="m-b-20 color-tertiary">Check this page for upcoming presentations and events related to Josh Bersin and the Josh Bersin Academy.  For speaking inquiries, contact <a href="mailto:lindagalloway@bersinpartners.com" class="type-bold">lindagalloway@bersinpartners.com</a>.</p>
+    <p class="m-b-20 color-tertiary">Check this page for upcoming presentations and events related to Josh Bersin and the Josh Bersin Academy.  For speaking inquiries, contact <a href="mailto:lindagalloway@bersinpartners.com" target="_blank" class="type-bold">lindagalloway@bersinpartners.com</a>.</p>
     <a href="#" onclick="history.back();">
       <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/arrow-primary.svg" alt="Go back">
     </a>
@@ -118,7 +118,7 @@ $webinars = get_posts( $args );
 <section class="block-top-padding-large block-bottom-padding-large">
   <div class="container">
     <div class="row gutter-60 align-items-center" id="events-testimonials-row">
-      <div class="col-auto">
+      <div class="col-auto row">
         <img src="<?php echo bloginfo('stylesheet_directory'); ?>/images/josh-bersin-event.jpg" alt="Josh Bersin in an event">
       </div>
       <div class="col">

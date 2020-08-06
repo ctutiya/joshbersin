@@ -43,7 +43,7 @@ get_header( $navigation );
     <form method="post" class="woocommerce-ResetPassword lost_reset_password width-300 margin-auto">
       <p class="m-b-50 align-center"><?php echo apply_filters( 'woocommerce_lost_password_message', esc_html__( 'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'woocommerce' ) ); ?></p><?php // @codingStandardsIgnoreLine ?>
       <label for="user_login" class="block m-b-10">
-        <input class="woocommerce-Input woocommerce-Input--text input-text m-t-10 full-width" type="text" name="user_login" id="user_login" autocomplete="username" placeholder="Username or email" />
+        <input class="border-radius-small woocommerce-Input woocommerce-Input--text input-text m-t-10 full-width" type="text" name="user_login" id="user_login" autocomplete="username" placeholder="Username or email" />
       </label>
 
       <?php do_action( 'woocommerce_lostpassword_form' ); ?>
