@@ -25,9 +25,9 @@ do_action( 'woocommerce_before_reset_password_form' );
 
 		<p class="m-b-20"><?php echo apply_filters( 'woocommerce_reset_password_message', esc_html__( 'Enter a new password below.', 'woocommerce' ) ); ?></p><?php // @codingStandardsIgnoreLine ?>
 
-		<label class="align-left color-tertiary type-bold font-14 m-b-5" for="password_1"><?php esc_html_e( 'New password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-		<input type="password" class="woocommerce-Input woocommerce-Input--text input-text m-b-20" name="password_1" id="password_1" autocomplete="new-password" />
-		<label class="align-left full-width color-tertiary type-bold font-14 m-b-5" for="password_2"><?php esc_html_e( 'Re-enter new password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
+		<label class="block align-left color-tertiary type-bold font-14 m-b-5" for="password_1"><?php esc_html_e( 'New password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
+		<input type="password" class="full-width woocommerce-Input woocommerce-Input--text input-text m-b-20" name="password_1" id="password_1" autocomplete="new-password" />
+		<label class="block align-left color-tertiary type-bold font-14 m-b-5" for="password_2"><?php esc_html_e( 'Re-enter new password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
 		<input type="password" class="full-width woocommerce-Input woocommerce-Input--text input-text" name="password_2" id="password_2" autocomplete="new-password" />
 
 		<input type="hidden" name="reset_key" value="<?php echo esc_attr( $args['key'] ); ?>" />

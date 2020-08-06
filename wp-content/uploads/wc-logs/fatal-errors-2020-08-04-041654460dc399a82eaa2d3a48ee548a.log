@@ -1,0 +1,14 @@
+2020-08-04T14:35:09+00:00 CRITICAL syntax error, unexpected '?' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 84
+
+2020-08-04T14:35:44+00:00 CRITICAL syntax error, unexpected '?' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 84
+
+2020-08-04T14:50:22+00:00 CRITICAL Uncaught Error: Call to undefined function ob_get_content() in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/form-login.php:58
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/wc-core-functions.php(344): include()
+#1 /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php(57): wc_get_template('myaccount/form-...')
+#2 /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(72): WC_Shortcode_My_Account::output('')
+#3 /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(115): WC_Shortcodes::shortcode_wrapper(Array, '')
+#4 /Applications/MAMP/htdocs/joshbersin/wp-includes/shortcodes.php(343): WC_Shortcodes::my_account('', '', 'woocommerce_my_...')
+#5 [internal function]: do_shortcode_tag(Array)
+#6 /Applications/MAMP/htdocs/joshbersin/wp-includes/shortcodes.php(218): preg_ in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/woocommerce/myaccount/form-login.php on line 58
+

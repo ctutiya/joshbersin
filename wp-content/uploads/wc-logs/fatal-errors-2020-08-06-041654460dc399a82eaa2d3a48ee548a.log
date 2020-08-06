@@ -1,0 +1,164 @@
+2020-08-06T07:12:22+00:00 CRITICAL Uncaught Error: Call to undefined function wc_add_notice() in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:154
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): update_account('')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-admin/admin-post.php(70): do_action('admin_post_upda...')
+#4 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 154
+
+2020-08-06T07:12:51+00:00 CRITICAL Uncaught Error: Call to undefined function wc_add_notice() in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:154
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): update_account('')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-admin/admin-post.php(70): do_action('admin_post_upda...')
+#4 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 154
+
+2020-08-06T07:14:05+00:00 CRITICAL Uncaught Error: Call to undefined function wc_add_notice() in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:154
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): update_account('')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-admin/admin-post.php(70): do_action('admin_post_upda...')
+#4 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 154
+
+2020-08-06T07:14:24+00:00 CRITICAL Uncaught Error: Call to undefined function wc_add_notice() in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:154
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): update_account('')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-admin/admin-post.php(70): do_action('admin_post_upda...')
+#4 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 154
+
+2020-08-06T07:14:36+00:00 CRITICAL Uncaught Error: Call to undefined function wc_add_notice() in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:154
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): update_account('')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-admin/admin-post.php(70): do_action('admin_post_upda...')
+#4 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 154
+
+2020-08-06T07:17:30+00:00 CRITICAL Uncaught Error: Call to undefined function wc_add_notice() in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:154
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): update_account('')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-admin/admin-post.php(70): do_action('admin_post_upda...')
+#4 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 154
+
+2020-08-06T07:18:01+00:00 CRITICAL Uncaught Error: Call to undefined function wc_add_notice() in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:156
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): update_account('')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-admin/admin-post.php(70): do_action('admin_post_upda...')
+#4 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 156
+
+2020-08-06T07:46:19+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 145
+
+2020-08-06T07:46:23+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 145
+
+2020-08-06T08:00:42+00:00 CRITICAL Uncaught Error: Call to a member function get_error_messages() on null in /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php:1140
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): WC_Form_Handler::process_registration('')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-settings.php(562): do_action('wp_loaded')
+#4 /Applications/MAMP/htdocs/joshbersin/wp-config.php(90): require_once('/Applications/M...')
+#5 /Applications/MAMP/htdocs/joshbersin/wp-load.php(37): require_once('/Applications/M...')
+#6 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(13): require_once('/Applications/M...')
+#7 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#8 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php on line 1140
+
+2020-08-06T08:01:14+00:00 CRITICAL Object of class WP_Error could not be converted to string in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 461
+
+2020-08-06T08:02:34+00:00 CRITICAL Uncaught Error: Call to a member function get_error_messages() on null in /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php:1140
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): WC_Form_Handler::process_registration('')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-settings.php(562): do_action('wp_loaded')
+#4 /Applications/MAMP/htdocs/joshbersin/wp-config.php(90): require_once('/Applications/M...')
+#5 /Applications/MAMP/htdocs/joshbersin/wp-load.php(37): require_once('/Applications/M...')
+#6 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(13): require_once('/Applications/M...')
+#7 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#8 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php on line 1140
+
+2020-08-06T08:03:48+00:00 CRITICAL Uncaught Error: Call to a member function get_error_messages() on null in /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php:1140
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): WC_Form_Handler::process_registration('')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-settings.php(562): do_action('wp_loaded')
+#4 /Applications/MAMP/htdocs/joshbersin/wp-config.php(90): require_once('/Applications/M...')
+#5 /Applications/MAMP/htdocs/joshbersin/wp-load.php(37): require_once('/Applications/M...')
+#6 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(13): require_once('/Applications/M...')
+#7 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#8 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php on line 1140
+
+2020-08-06T08:12:15+00:00 CRITICAL Uncaught Error: Call to a member function get_error_messages() on null in /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php:1140
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): WC_Form_Handler::process_registration('')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-settings.php(562): do_action('wp_loaded')
+#4 /Applications/MAMP/htdocs/joshbersin/wp-config.php(90): require_once('/Applications/M...')
+#5 /Applications/MAMP/htdocs/joshbersin/wp-load.php(37): require_once('/Applications/M...')
+#6 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(13): require_once('/Applications/M...')
+#7 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#8 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php on line 1140
+
+2020-08-06T08:21:15+00:00 CRITICAL Uncaught Error: Call to a member function get_error_messages() on null in /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php:1140
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): WC_Form_Handler::process_registration('')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-settings.php(562): do_action('wp_loaded')
+#4 /Applications/MAMP/htdocs/joshbersin/wp-config.php(90): require_once('/Applications/M...')
+#5 /Applications/MAMP/htdocs/joshbersin/wp-load.php(37): require_once('/Applications/M...')
+#6 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(13): require_once('/Applications/M...')
+#7 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#8 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php on line 1140
+
+2020-08-06T08:23:14+00:00 CRITICAL Uncaught Error: Call to a member function get_error_messages() on null in /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php:1140
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): WC_Form_Handler::process_registration('')
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /Applications/MAMP/htdocs/joshbersin/wp-settings.php(562): do_action('wp_loaded')
+#4 /Applications/MAMP/htdocs/joshbersin/wp-config.php(90): require_once('/Applications/M...')
+#5 /Applications/MAMP/htdocs/joshbersin/wp-load.php(37): require_once('/Applications/M...')
+#6 /Applications/MAMP/htdocs/joshbersin/wp-blog-header.php(13): require_once('/Applications/M...')
+#7 /Applications/MAMP/htdocs/joshbersin/index.php(17): require('/Applications/M...')
+#8 {main}
+  thrown in /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php on line 1140
+
+2020-08-06T08:27:11+00:00 CRITICAL Object of class WP_Error could not be converted to string in /Applications/MAMP/htdocs/joshbersin/wp-includes/kses.php on line 1611
+
+2020-08-06T08:28:41+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php:474
+Stack trace:
+#0 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(289): action_woocommerce_register_post(Object(WP_Error))
+#1 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(206): WP_Hook->apply_filters(Object(WP_Error), Array)
+#2 /Applications/MAMP/htdocs/joshbersin/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php(1139): apply_filters('woocommerce_pro...', Object(WP_Error), '', 'Onth3str33t', 'asdf@asdf.com')
+#3 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(287): WC_Form_Handler::process_registration('')
+#4 /Applications/MAMP/htdocs/joshbersin/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#5 /Applications/MAMP/htdocs/joshbersin/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#6 /Applications/MAMP/htdocs/joshbersin/wp-settings.php(562): do_action('wp_loaded')
+#7 /A in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 474
+
+2020-08-06T09:21:56+00:00 CRITICAL syntax error, unexpected '}' in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 493
+
+2020-08-06T09:23:35+00:00 CRITICAL Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /Applications/MAMP/htdocs/joshbersin/wp-content/themes/mouche-child/functions.php on line 490
+
